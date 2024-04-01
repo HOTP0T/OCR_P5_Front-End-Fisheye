@@ -1,9 +1,8 @@
+// TODO ADD JSOC
 /**
  * Description placeholder
- * @date 4/1/2024 - 9:29:32 PM
- *
  * @async
- * @return {unknown}
+ * @returns {unknown}
  */
 async function getPhotographers() {
   // Récupère les données des photographes depuis le fichier JSON
@@ -11,13 +10,12 @@ async function getPhotographers() {
 }
 console.log(getPhotographers());
 
+// TODO ADD JSOC
 /**
  * Description placeholder
- * @date 4/1/2024 - 9:30:22 PM
- *
  * @async
  * @param {*} photographers
- * @return {*}
+ * @returns {*}
  */
 async function displayData(photographers) {
   const photographersSection = document.querySelector('.photographer_section');
@@ -29,12 +27,11 @@ async function displayData(photographers) {
   });
 }
 
+// TODO ADD JSOC
 /**
  * Description placeholder
- * @date 4/1/2024 - 9:30:29 PM
- *
  * @async
- * @return {*}
+ * @returns {*}
  */
 async function init() {
   // Récupère les datas des photographes

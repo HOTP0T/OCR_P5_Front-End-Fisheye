@@ -1,7 +1,6 @@
+// TODO ADD JSOC
 /**
  * Description placeholder
- * @date 4/1/2024 - 10:40:39 PM
- *
  * @param {*} data
  * @returns {{ data: any; getUserCardDOM: () => any; }}
  */
@@ -15,12 +14,15 @@ function photographerTemplate(data) {
   const taglineURL = `${photographerTagline}`;
   const priceURL = `${photographerPrice}`;
 
-  /**
-   * Description placeholder
-   * @date 4/1/2024 - 9:39:40 PM
-   *
-   * @returns {*}
-   */
+  // console log to check the data
+  console.log(data);
+
+// TODO ADD JSOC
+/**
+ * Description placeholder
+ *
+ * @returns {*}
+ */
   function getUserCardDOM() {
     const article = document.createElement('article');
     const img = document.createElement('img');
