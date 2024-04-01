@@ -7,7 +7,7 @@
  */
 async function getPhotographers() {
   // Récupère les données des photographes depuis le fichier JSON
-  return fetch('data/photographers.json').then((response) => response.json());
+  return fetch('/data/db.json').then((response) => response.json());
 }
 console.log(getPhotographers());
 
