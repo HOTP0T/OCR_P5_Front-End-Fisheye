@@ -16,7 +16,7 @@
       "country": "France",
       "tagline": "Capturer des compositions complexes",
       "price": 250,
-      "portrait": "assets/images/webp/Ellie+Rose/profile/EllieRoseWilkens.webp"
+      "portrait": "assets/images/webp/Ellie Rose/profile/EllieRoseWilkens.webp"
     },
     {
       "name": "Tracy Galindo",
@@ -132,7 +132,7 @@
       "id": 8523492,
       "photographerId": 82,
       "title": "Purple Tunnel",
-      "image": "./assets/images/webp/Tracy/images/Art_Purple_Tunnel.webp",
+      "image": "./assets/images/webp/Tracy/images/Art_Purple_light.webp",
       "likes": 24,
       "date": "2018-05-05",
       "price": 55
@@ -150,7 +150,7 @@
       "id": 73852953,
       "photographerId": 925,
       "title": "8 Rows",
-      "image": "./assets/images/webp/Rhode/images/Architecture_8_Rows.webp",
+      "image": "./assets/images/webp/Rhode/images/Sport_2000_with_8.webp",
       "likes": 52,
       "date": "2013-02-30",
       "price": 70
@@ -195,7 +195,7 @@
       "id": 23394384,
       "photographerId": 925,
       "title": "Musical Festival Keyboard",
-      "image": "./assets/images/webp/Rhode/images/Event_MusicalFestival.webp",
+      "image": "./assets/images/webp/Rhode/images/Event_KeyboardCheck.webp",
       "likes": 52,
       "date": "2019-07-18",
       "price": 70
@@ -204,7 +204,7 @@
       "id": 87367293,
       "photographerId": 925,
       "title": "Musical Festival Singer",
-      "image": "./assets/images/webp/Rhode/images/Event_MusicalFestivalSinger.webp",
+      "image": "./assets/images/webp/Rhode/images/Event_Emcee.webp",
       "likes": 23,
       "date": "2018-02-22",
       "price": 70
@@ -222,7 +222,7 @@
       "id": 83958935,
       "photographerId": 925,
       "title": "Cute puppy on sunset",
-      "video": "./assets/images/webp/Rhode/videos/Animals_Puppy.mp4",
+      "video": "./assets/images/webp/Rhode/videos/Animals_Puppiness.mp4",
       "likes": 52,
       "date": "2016-06-12",
       "price": 70
@@ -231,7 +231,7 @@
       "id": 394583434,
       "photographerId": 527,
       "title": "Rocky mountains from the air",
-      "video": "./assets/images/webp/Nabeel/videos/Travel_Rocky_Mountains.mp4",
+      "video": "./assets/images/webp/Nabeel/videos/Travel_Rock_Mountains.mp4",
       "likes": 23,
       "date": "2017-03-18",
       "price": 45
@@ -276,7 +276,7 @@
       "id": 92352352,
       "photographerId": 527,
       "title": "Portrait Sunkiss",
-      "image": "./assets/images/webp/Nabeel/images/Portrait_Sunkiss.webp",
+      "image": "./assets/images/webp/Nabeel/images/Portrait_Sunkissed.webp",
       "likes": 66,
       "date": "2018-05-24",
       "price": 45
@@ -321,7 +321,7 @@
       "id": 625025343,
       "photographerId": 243,
       "title": "Hillside Color",
-      "image": "./assets/images/webp/Mimi/images/Travel_Lonesome.webp",
+      "image": "./assets/images/webp/Mimi/images/Travel_HillsideColor.webp",
       "likes": 85,
       "date": "2019-04-03",
       "price": 45
@@ -393,7 +393,7 @@
       "id": 95234343,
       "photographerId": 243,
       "title": "Rainbow Bird",
-      "image": "./assets/images/webp/Mimi/images/Animals_Rainbow_Bird.webp",
+      "image": "./assets/images/webp/Mimi/images/Animals_Rainbow.webp",
       "likes": 59,
       "date": "2019-07-02",
       "price": 60
@@ -492,7 +492,7 @@
       "id": 952343423,
       "photographerId": 930,
       "title": "Tricks in the air",
-      "video": "./assets/images/webp/Ellie+Rose/videos/Sport_Tricks_in_the_air.mp4",
+      "video": "./assets/images/webp/Ellie Rose/videos/Sport_Tricks_in_the_air.mp4",
       "likes": 150,
       "date": "2018-02-30",
       "price": 70
@@ -501,7 +501,7 @@
       "id": 235234343,
       "photographerId": 930,
       "title": "Climber",
-      "image": "./assets/images/webp/Ellie+Rose/images/Sport_Next_Hold.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Sport_Next_Hold.webp",
       "likes": 101,
       "date": "2018-03-05",
       "price": 65
@@ -510,7 +510,7 @@
       "id": 235343222,
       "photographerId": 930,
       "title": "Surfer",
-      "image": "./assets/images/webp/Ellie+Rose/images/Sport_Water_tunnel.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Sport_Water_tunnel.webp",
       "likes": 103,
       "date": "2018-03-10",
       "price": 70
@@ -519,7 +519,7 @@
       "id": 7775342343,
       "photographerId": 930,
       "title": "Skier",
-      "image": "./assets/images/webp/Ellie+Rose/images/Sport_Sky_Cross.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Sport_Sky_Cross.webp",
       "likes": 77,
       "date": "2018-04-16",
       "price": 50
@@ -528,7 +528,7 @@
       "id": 9253445784,
       "photographerId": 930,
       "title": "Race End",
-      "image": "./assets/images/webp/Ellie+Rose/images/Sport_Race_End.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Sport_Race_End.webp",
       "likes": 88,
       "date": "2018-04-22",
       "price": 65
@@ -537,7 +537,7 @@
       "id": 22299394,
       "photographerId": 930,
       "title": "Jump!",
-      "image": "./assets/images/webp/Ellie+Rose/images/Sport_Jump.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Sport_Jump.webp",
       "likes": 95,
       "date": "2018-04-27",
       "price": 70
@@ -546,7 +546,7 @@
       "id": 3452342633,
       "photographerId": 930,
       "title": "White Light",
-      "image": "./assets/images/webp/Ellie+Rose/images/Architecture_White_Light.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Architecture_White_Light.webp",
       "likes": 52,
       "date": "2018-05-03",
       "price": 75
@@ -555,7 +555,7 @@
       "id": 939234243,
       "photographerId": 930,
       "title": "Water on Modern Building",
-      "image": "./assets/images/webp/Ellie+Rose/images/Architecture_Water_on_Modern.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Architecture_Water_on_Modern.webp",
       "likes": 55,
       "date": "2018-05-10",
       "price": 72
@@ -564,7 +564,7 @@
       "id": 222959233,
       "photographerId": 930,
       "title": "Horseshoe",
-      "image": "./assets/images/webp/Ellie+Rose/images/Architecture_Horseshoe.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Architecture_Horseshoe.webp",
       "likes": 85,
       "date": "2018-05-15",
       "price": 71
@@ -573,7 +573,7 @@
       "id": 965933434,
       "photographerId": 930,
       "title": "Cross Bar",
-      "image": "./assets/images/webp/Ellie+Rosee/images/Architecture_Cross_Bar.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Architecture_Cross_Bar.webp",
       "likes": 66,
       "date": "2018-05-20",
       "price": 58
@@ -582,7 +582,7 @@
       "id": 777723343,
       "photographerId": 930,
       "title": "Connected Curves",
-      "image": "./assets/images/webp/Ellie+Rose/images/Architecture_Connected_Curves.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Architecture_Connected_Curves.webp",
       "likes": 79,
       "date": "2018-05-21",
       "price": 80
