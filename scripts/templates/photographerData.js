@@ -19,13 +19,11 @@ async function getPhotographerDetails(photographerId) {
   }
 }
 
-
 function displayPhotographerDetails(photographer) {
-  // Example implementation - adjust according to your actual HTML structure
   document.getElementById('photographer-name').textContent = photographer.name;
   document.getElementById('photographer-location').textContent = `${photographer.city}, ${photographer.country}`;
   document.getElementById('photographer-tagline').textContent = photographer.tagline;
-  document.getElementById('photographer-price').textContent = `Price: ${photographer.price}`;
+  document.getElementById('photographer-price').textContent = `${photographer.price}€/jour`;
   const img = document.createElement('img');
   img.src = photographer.portrait;
   document.getElementById('photographer-image').appendChild(img);

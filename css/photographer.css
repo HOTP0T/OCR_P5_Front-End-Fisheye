@@ -1,5 +1,20 @@
+img.photographer-portrait,
+#photographer-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+/** MODAL STYLES **/
+
+/* Hides form by default */
 #contact_modal {
     display: none;
+}
+
+/* to make sure contact button is visible */
+#openModal {
+    display: block;
 }
 
 .photograph-header {
@@ -48,6 +63,21 @@
     text-align: center;
 }
 
+.modal_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+div#contact_modal.modal {
+  position: fixed;
+  top: 0;
+  width: 60%;
+  
+}
+
 form {
     display: flex;
     width: 100%;
@@ -73,4 +103,10 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+.error {
+  display: none;
+  color: #ff4e60;
+  font-size: 0.85rem;
 }

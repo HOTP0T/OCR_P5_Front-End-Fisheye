@@ -5,7 +5,6 @@ body {
     margin: 0;
 }
 
-
 header {
     display: flex;
     flex-direction: row;
@@ -17,6 +16,11 @@ header {
 h1 {
     color: #901C1C;
     margin-right: 100px;
+    font-family: "DM Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .logo {
@@ -44,8 +48,7 @@ h1 {
     font-size: 36px;
 }
 
-.photographer_section article img,
-#photographer-image img {
+.photographer_section article img {
     width: 200px;
     height: 200px;
 }
@@ -58,4 +61,31 @@ h1 {
 .media-item video {
   width: 200px;
   height: 200px;
+}
+
+article.photographer-article {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  height: 275px;
+  gap: 2px;
+  text-align: center;
+  text-wrap: nowrap;
+}
+
+.photographer-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* adds a cursor pointer to the photographer article */
+article.photographer-article,
+button {
+  cursor: pointer;
 }

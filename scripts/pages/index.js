@@ -40,13 +40,13 @@ function photographerTemplate(photographer) {
   article.appendChild(tagline);
 
   const price = document.createElement('p');
-  price.textContent = `Price: ${photographer.price}`;
+  price.textContent = `${photographer.price}€/jour`;
   article.appendChild(price);
 
   return article;
 }
 
-// Displays each photographer's data on the main page
+// Displays each photographer's data on the main page and make them clickable
 async function displayData(photographers) {
   const photographersSection = document.querySelector('.photographer_section');
 
