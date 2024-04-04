@@ -49,3 +49,13 @@ h1 {
     width: 200px;
     height: 200px;
 }
+
+.media-item img {
+  width: 200px;
+  height: 200px;
+}
+
+.media-item video {
+  width: 200px;
+  height: 200px;
+}
