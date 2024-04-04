@@ -1,6 +1,6 @@
 // TODO ADD JSOC/**
- * Description placeholder
- */
+/* Description placeholder
+* /
 function displayModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "block";
