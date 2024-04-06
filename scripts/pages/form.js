@@ -1,3 +1,4 @@
+console.log("👾 ~ Hello from form.js");
 // Lors du click de submit du formulaire, on vérifie les champs et on affiche un message d'erreur si nécessaire
 document.querySelector("#formulaire").addEventListener("submit", function (event) {
   // empeche le default behaviour du formulaire lors du submit en cas derreur -> il ne refraichit pas la page

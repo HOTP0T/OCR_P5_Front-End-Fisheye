@@ -310,7 +310,7 @@ textarea {
   font-size: 0.85rem;
 }
 
-.bottom-pink {
+.bottom-info {
   position: fixed;
   bottom: 0;
   right: 60px;
@@ -318,5 +318,15 @@ textarea {
   border-radius: 5px 5px 0 0;
   background: #DB8876;
   height: 50px;
-  width: 320px;
+  width: 270px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 20px;
+}
+
+.bottom-info span {
+  font-size: 18px;
 }

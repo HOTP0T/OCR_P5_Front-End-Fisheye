@@ -38,14 +38,15 @@
         <div id="photographer-image"></div>
       </section>
       <div class="filter-div">
-        <span class="text-filter">Trier par</span>
-        <select id="filter" class="filter">
-          <option value="popularite">Popularité</option>
-          <option value="date">Date</option>
-          <option value="titre">Titre</option>
-        </select>
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
+      <span class="text-filter">Trier par</span>
+      <select id="filterOptions" class="filter">
+        <option value="likes" id="sort-by-likes">Popularité</option> <!-- Changed popularite to likes -->
+        <option value="date" id="sort-by-date">Date</option>
+        <option value="title" id="sort-by-title">Titre</option> <!-- Changed titre to title -->
+      </select>
+      
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
       <section class="photographer-media" id="media-container">
         <!-- Media items will be dynamically added here -->
       </section>
@@ -117,15 +118,15 @@
           </div>
         </div>
       </div>
-      <div class=bottom-pink>
-    <div id="photographer-price"></div>
+      <div id=bottom-pink>
       </div>
       
     </main>
     
     <script src="scripts/templates/photographerData.js"></script>
     <script src="scripts/pages/photographer.js"></script>
+    <script src="scripts/utils/sort.js"></script>
     <script src="scripts/pages/form.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
   </body>
 </html>
