@@ -37,10 +37,12 @@ main {
 #photographer-name {
   color: #d3573c;
   font-family: "DM Sans";
-  font-size: 64px;
+  font-size: 50px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  text-wrap: wrap;
 }
 
 #photographer-location {
@@ -304,9 +306,24 @@ textarea {
   border-radius: 5px;
 }
 
+
+/* Adjusted dimming approach */
+body.dimmed > :not(.modal_container) {
+  opacity: 0.5;
+}
+
+.modal_container {
+  /* Other styles remain */
+  position: fixed; /* Ensure it's positioned relative to the viewport */
+  z-index: 1000; /* Keep this to ensure it's above other content */
+  opacity: 1; /* Ensure the modal itself is fully opaque */
+}
+
+
+
 .error {
   display: none;
-  color: #ff4e60;
+  color: #68060f;
   font-size: 0.85rem;
 }
 
@@ -326,6 +343,11 @@ textarea {
 
   padding: 0 20px;
 }
+
+.modal-open {
+  overflow: hidden; /* Prevent scrolling on the body */
+}
+
 
 .bottom-info span {
   font-size: 18px;
