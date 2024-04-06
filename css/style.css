@@ -29,10 +29,25 @@ h1 {
 }
 
 .photographer_section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
+    /* display flex for 3x3 unresponsive */
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+
+    gap: 200px;
     margin-top: 100px;
+
+    /* display flex for responsive */
+    display: flex;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    justify-self: center;
+    align-items: center;
+    align-content: space-evenly;
+
+    flex-wrap: wrap;
 }
 
 .photographer_section article {
@@ -49,18 +64,10 @@ h1 {
 }
 
 .photographer_section article img {
-    width: 200px;
-    height: 200px;
-}
-
-.media-item img {
-  width: 200px;
-  height: 200px;
-}
-
-.media-item video {
-  width: 200px;
-  height: 200px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 article.photographer-article {
@@ -69,19 +76,10 @@ article.photographer-article {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 200px;
-  height: 275px;
+  width: 250px;
   gap: 2px;
   text-align: center;
   text-wrap: nowrap;
-}
-
-.photographer-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
 }
 
 /* adds a cursor pointer to the photographer article */

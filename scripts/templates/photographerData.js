@@ -1,8 +1,8 @@
+console.log('🤖 ~ Hello from photographerData.js');
 async function getPhotographerDetails(photographerId) {
   try {
     const response = await fetch('https://api.jsonbin.io/v3/b/660d15e2ad19ca34f854284c', {
       headers: {
-        // KEYS SHOULD NEVER APPEAR IN CLIENT SIDE CODE, THIS IS JUST FOR DEVELOPMENT PURPOSES ONLY
         'X-Master-Key': '$2a$10$qbfGIDJdT4VtlhBqXNLnXO5PaWdVaDRbrEJjAk6T5riM8VLv7mP.a'
       }
     });
@@ -10,7 +10,6 @@ async function getPhotographerDetails(photographerId) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    // Adjusted for JSONBin.io v3 API response structure
     const photographer = data.record.photographers.find(p => p.id === parseInt(photographerId, 10));
     const media = data.record.media.filter(m => m.photographerId === parseInt(photographerId, 10));
     return { photographer, media };
@@ -31,41 +30,53 @@ function displayPhotographerDetails(photographer) {
 
 function displayPhotographerMedia(media) {
   const mediaContainer = document.getElementById('media-container');
-  media.forEach(item => {
+
+  // Sort media by type, images first and then videos
+  const sortedMedia = [...media].sort((a, b) => (a.image && b.video) ? -1 : (a.video && b.image) ? 1 : 0);
+
+  sortedMedia.forEach(item => {
     const mediaElement = document.createElement('div');
     mediaElement.className = 'media-item';
-
-    const title = document.createElement('h3');
-    title.textContent = item.title;
-    mediaElement.appendChild(title);
 
     if (item.image) {
       const img = document.createElement('img');
       img.src = item.image;
+      img.className = 'photographer-image';
       mediaElement.appendChild(img);
     } else if (item.video) {
       const video = document.createElement('video');
       video.controls = true;
+      video.className = 'photographer-video';
       const source = document.createElement('source');
       source.src = item.video;
       video.appendChild(source);
       mediaElement.appendChild(video);
     }
 
+    const mediaDetails = document.createElement('div');
+    mediaDetails.classList.add('media-details');
+
+    const title = document.createElement('h3');
+    title.textContent = item.title;
+    mediaDetails.appendChild(title);
+
     const likes = document.createElement('span');
-    likes.textContent = `${item.likes} likes`;
-    const likeButton = document.createElement('button');
+    likes.textContent = `${item.likes}`;
+    const likeButton = document.createElement('i');
     likeButton.innerHTML = '&#x2764;';
     likeButton.onclick = () => {
-      item.likes += 1; // Increment the likes
-      likes.textContent = `${item.likes} likes`; // Update the likes display
+      item.likes += 1;
+      likes.textContent = `${item.likes} likes`;
     };
 
-    mediaElement.appendChild(likes);
-    mediaElement.appendChild(likeButton);
+    mediaDetails.appendChild(likes);
+    mediaDetails.appendChild(likeButton);
+
+    mediaElement.appendChild(mediaDetails);
     mediaContainer.appendChild(mediaElement);
   });
 }
+
 
 async function init() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -82,6 +93,8 @@ async function init() {
   } else {
     console.error('Failed to load photographer details or media.');
   }
+    console.log("🚀 ~ init ~ photographer:", photographer)
+    console.log("🚀 ~ init ~ media:", media)
 }
 
 init();

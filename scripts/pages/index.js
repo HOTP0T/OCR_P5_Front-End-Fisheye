@@ -1,3 +1,4 @@
+console.log("👾 ~ Hello from index.js");
 // Fetches photographers data from the JSON
 async function getPhotographers() {
   try {
@@ -65,6 +66,7 @@ async function init() {
   if (data && data.record && data.record.photographers) {
     displayData(data.record.photographers);
   }
+  console.log("🚀 ~ init ~ data:", data)
 }
 
 init();
