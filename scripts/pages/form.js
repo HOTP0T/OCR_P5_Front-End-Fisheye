@@ -15,6 +15,7 @@ document.querySelector("#formulaire").addEventListener("submit", function (event
   var first = document.querySelector("#first");
   var last = document.querySelector("#last");
   var email = document.querySelector("#email");
+  var message = document.querySelector("#message");
 
   // je verifie chaque champ et affiche un message derreur si necessaire
   // si le champ est valide -> je cache le message derreur
@@ -43,11 +44,20 @@ document.querySelector("#formulaire").addEventListener("submit", function (event
     }
   }
 
-
+  function validateMessage() {
+    if (message.value.trim().length < 2) {
+      document.querySelector(".errorMessage").style.display = "inline";
+      errors = true;
+    } else {
+      document.querySelector(".errorMessage").style.display = "none";
+    }
+}
 
   // Validation de chaque champ
   validateName(first, ".errorFirst");
   validateName(last, ".errorLast");
+  validateEmail();
+  validateMessage();
   validateEmail();
 
   // si aucune erreur, je lance la validation avec la fonction launchValidation (qui cache le formulaire et affiche le message de validation)

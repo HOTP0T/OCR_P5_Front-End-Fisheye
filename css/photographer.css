@@ -1,14 +1,24 @@
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  max-width: 1440px;
+  margin: auto;
+}
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 #photographer-image img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
+
+  margin-right: 35px;
 }
 
 .photographer-info {
@@ -19,12 +29,101 @@ main {
   align-items: center;
   align-content: center;
   width: 80%;
+  background-color: #fafafa;
+
+  margin-left: 35px;
+}
+
+#photographer-name {
+  color: #d3573c;
+  font-family: "DM Sans";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#photographer-location {
+  color: #901c1c;
+  font-family: "DM Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#photgrpaher-tagline {
+  color: #525252;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.filter-div {
+  height: 100px;
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+
+  margin-left: 35px;
+}
+
+.text-filter {
+  padding-right: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.fa-chevron-down {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+
+  position: relative;
+  right: 25px;
+
+  pointer-events: none;
+}
+
+/* if need remove default select style */
+select,
+option {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+#filter,
+option {
+  width: 145px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* MEDIA SECTION */
 #media-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
+  justify-items: center;
+  align-content: center;
+  justify-content: space-between;
+  align-self: center;
+
   width: 80%;
 }
 
@@ -41,13 +140,14 @@ main {
   width: 300px;
   height: 300px;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .media-details {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 80%;
   flex-wrap: nowrap;
   width: 300px;
   color: #901c1c;
@@ -56,6 +156,29 @@ main {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+h3,
+span.likes,
+i.like-button {
+  color: #901c1c;
+  font-family: "Raleway";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 1;
+  line-height: normal;
+
+}
+
+h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+}
+
+.like-div {
+  cursor: pointer;
 }
 
 /** MODAL STYLES **/
@@ -72,10 +195,11 @@ main {
 .photograph-header {
   background-color: #fafafa;
   height: 300px;
-  margin: 0 100px;
+  margin: 0 80px;
 }
 
-#openModal {
+#openModal,
+select {
   font-size: 18px;
   font-weight: bold;
   color: white;
@@ -110,14 +234,24 @@ main {
   width: 100%;
 }
 
-.modal header img {
-  cursor: pointer;
+.header-msg {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 }
 
-.modal header h2 {
-  font-size: 64px;
-  font-weight: normal;
-  text-align: center;
+.modal header h2,
+.modal header p {
+  color: #000;
+  font-family: "DM Sans";
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.modal header img {
+  cursor: pointer;
 }
 
 .modal_container {
@@ -131,19 +265,27 @@ main {
 div#contact_modal.modal {
   position: fixed;
   top: 0;
-  width: 60%;
+  width: 40%;
+  
+  margin: auto;
+  z-index: 1;
+
+  gap: 20px;
+
+  margin-top: 50px;
 }
 
 form {
   display: flex;
   width: 100%;
   flex-direction: column;
-  align-items: flex-start;
+  
+  margin-top: 20px;
 }
 
 form label {
   color: #312e2e;
-  font-size: 36px;
+  font-size: 27px;
 }
 
 form div {
@@ -154,7 +296,8 @@ form div {
   margin-bottom: 26px;
 }
 
-form input {
+form input,
+textarea {
   width: 100%;
   height: 68px;
   border: none;
@@ -165,4 +308,15 @@ form input {
   display: none;
   color: #ff4e60;
   font-size: 0.85rem;
+}
+
+.bottom-pink {
+  position: fixed;
+  bottom: 0;
+  right: 60px;
+
+  border-radius: 5px 5px 0 0;
+  background: #DB8876;
+  height: 50px;
+  width: 320px;
 }

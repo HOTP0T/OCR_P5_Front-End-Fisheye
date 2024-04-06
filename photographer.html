@@ -8,6 +8,14 @@
       href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/914ca5d668.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Fisheye - Photographe</title>
   </head>
   <body>
@@ -24,69 +32,100 @@
           <div id="photographer-location"></div>
           <div id="photographer-tagline"></div>
         </div>
-        <button id="openModal" onclick="displayModal()"><h2>Contactez-moi</h2></button>
+        <button id="openModal" onclick="displayModal()">
+          <h2>Contactez-moi</h2>
+        </button>
         <div id="photographer-image"></div>
       </section>
-      <span>Trier par :</span>
+      <div class="filter-div">
+        <span class="text-filter">Trier par</span>
+        <select id="filter" class="filter">
+          <option value="popularite">Popularité</option>
+          <option value="date">Date</option>
+          <option value="titre">Titre</option>
+        </select>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
       <section class="photographer-media" id="media-container">
         <!-- Media items will be dynamically added here -->
       </section>
       <div class="modal_container">
-      <div id="contact_modal" class="modal">
-        <div class="modal-content">
-          <header>
-            <img
-              src="assets/icons/close.svg"
-              onclick="closeModal()"
-              alt="Close"
-              aria-label="Close modal"
-            />
-          </header>
-          <form class="form" id="formulaire">
-            <div class="formData">
-              <label for="first">Prénom</label><br />
-
-              <input
-                class="text-control"
-                type="text"
-                id="first"
-                name="first"
+        <div id="contact_modal" class="modal">
+          <div class="modal-content">
+            <header>
+              <div class="header-msg">
+                <h2>Contactez-moi</h2>
+                <p>Mimi Keel</p>
+              </div>
+              <img
+                src="assets/icons/close.svg"
+                onclick="closeModal()"
+                alt="Close"
+                aria-label="Close modal"
               />
-              <span class="error errorFirst"
-                >Veuillez entrer 2 caractères ou plus pour le champ du
-                prénom.</span
-              >
-            </div>
-            <div class="formData">
-              <label for="last">Nom</label><br />
+            </header>
+            <form class="form" id="formulaire">
+              <div class="formData">
+                <label for="first">Prénom</label><br />
 
-              <input class="text-control" type="text" id="last" name="last" />
-              <span class="error errorLast"
-                >Veuillez entrer 2 caractères ou plus pour le champ du
-                nom.</span
-              >
-            </div>
-            <div class="formData">
-              <label for="email">E-mail</label><br />
+                <input
+                  class="text-control"
+                  type="text"
+                  id="first"
+                  name="first"
+                />
+                <span class="error errorFirst"
+                  >Veuillez entrer 2 caractères ou plus pour le champ du
+                  prénom.</span
+                >
+              </div>
+              <div class="formData">
+                <label for="last">Nom</label><br />
 
-              <input class="text-control" id="email" name="email" />
-              <span class="error errorEmail"
-                >Veuillez entrer une adresse mail valide.</span
-              >
-            </div>
-            <input
-              class="btn-submit formData button-submit"
-              type="submit"
-              value="C'est parti"
-            />
-          </form>
-        </div>
+                <input class="text-control" type="text" id="last" name="last" />
+                <span class="error errorLast"
+                  >Veuillez entrer 2 caractères ou plus pour le champ du
+                  nom.</span
+                >
+              </div>
+              <div class="formData">
+                <label for="email">E-mail</label><br />
+
+                <input class="text-control" id="email" name="email" />
+                <span class="error errorEmail"
+                  >Veuillez entrer une adresse mail valide.</span
+                >
+              </div>
+              <div class="formData">
+                <label for="email">Votre message</label><br />
+
+                <textarea
+                  class="text-control"
+                  id="message"
+                  name="message"
+                ></textarea>
+                <span class="error errorMessage"
+                  >Veuillez entrer un message.</span
+                >
+              </div>
+              <input
+                class="btn-submit formData button-submit"
+                type="submit"
+                value="C'est parti"
+              />
+            </form>
+          </div>
         </div>
       </div>
-      <div id="photographer-price"></div>
+      <div class=bottom-pink>
+    <div id="photographer-price"></div>
+      </div>
+      
     </main>
-    <script src="/scripts/utils/contactForm.js"></script>
+    
     <script src="scripts/templates/photographerData.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
     <script src="scripts/pages/form.js"></script>
+    <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>
