@@ -36,7 +36,7 @@ function openLightbox(mediaSrc) {
 
   // Create and set up the close button for the lightbox
   const closeBtn = document.createElement('span');
-  closeBtn.innerHTML = '&times;';
+  closeBtn.innerHTML = '<img src="./assets/icons/svgtopng/close-24px 1.png" class="close" alt="close-lightbox" />';
   closeBtn.className = 'lightbox-close';
   closeBtn.onclick = () => lightboxOverlay.remove();
 
@@ -73,7 +73,7 @@ function openLightbox(mediaSrc) {
   ['left', 'right'].forEach(direction => {
     const arrow = document.createElement('span');
     arrow.className = `lightbox-arrow ${direction}`;
-    arrow.textContent = direction === 'left' ? '⬅' : '➡';
+    arrow.innerHTML = direction === 'left' ? '<img src="./assets/icons/svgtopng/expand_more-24px 4.png" class="arrows" alt="left-lightbox" />' : '<img src="./assets/icons/svgtopng/expand_more-24px 5.png" class="arrows" alt="right-lightbox" />';
     arrow.onclick = () => navigate(direction === 'left' ? -1 : 1);
     lightboxContent.appendChild(arrow);
   });
