@@ -176,7 +176,6 @@ i.like-button {
   font-style: normal;
   font-weight: 1;
   line-height: normal;
-
 }
 
 h3 {
@@ -275,7 +274,7 @@ div#contact_modal.modal {
   position: fixed;
   top: 0;
   width: 40%;
-  
+
   margin: auto;
   z-index: 1;
 
@@ -288,7 +287,7 @@ form {
   display: flex;
   width: 100%;
   flex-direction: column;
-  
+
   margin-top: 20px;
 }
 
@@ -313,7 +312,6 @@ textarea {
   border-radius: 5px;
 }
 
-
 /* Adjusted dimming approach */
 body.dimmed > :not(.modal_container) {
   opacity: 0.5;
@@ -325,8 +323,6 @@ body.dimmed > :not(.modal_container) {
   z-index: 1000; /* Keep this to ensure it's above other content */
   opacity: 1; /* Ensure the modal itself is fully opaque */
 }
-
-
 
 .error {
   display: none;
@@ -340,7 +336,7 @@ body.dimmed > :not(.modal_container) {
   right: 60px;
 
   border-radius: 5px 5px 0 0;
-  background: #DB8876;
+  background: #db8876;
   height: 50px;
   width: 270px;
 
@@ -354,7 +350,6 @@ body.dimmed > :not(.modal_container) {
 .modal-open {
   overflow: hidden; /* Prevent scrolling on the body */
 }
-
 
 .bottom-info span {
   font-size: 18px;
@@ -393,7 +388,8 @@ body.dimmed > :not(.modal_container) {
   cursor: pointer;
 }
 
-#prev, #next {
+#prev,
+#next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -424,7 +420,7 @@ body.dimmed > :not(.modal_container) {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   display: none;
   justify-content: center;
   align-items: center;
@@ -442,14 +438,15 @@ body.dimmed > :not(.modal_container) {
   top: 10px;
   right: 20px;
   font-size: 30px;
-  color: white;
+  color: rgb(11, 11, 11);
   cursor: pointer;
 }
 
-.lightbox-content img, .lightbox-content video {
-  max-width: 80%; /* Adjusts the maximum width to fit the screen */
-  max-height: 80vh; /* Adjusts the maximum height to fit within the viewport height */
-  object-fit: contain; /* Ensures the aspect ratio is maintained without cropping */
+.lightbox-content img,
+.lightbox-content video {
+  max-width: 80%;
+  max-height: 80vh;
+  object-fit: contain;
 }
 
 /* Ensure the lightbox content is centered and adds some padding */
@@ -464,18 +461,31 @@ body.dimmed > :not(.modal_container) {
 .lightbox-arrow {
   cursor: pointer;
   font-size: 30px;
-  color: white;
+  color: rgb(3, 3, 3);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   padding: 10px;
-  z-index: 1010; /* Ensure arrows are above other elements */
+  z-index: 1010;
 }
 
 .lightbox-arrow.left {
-  left: 20px;
+  left: -15px;
 }
 
 .lightbox-arrow.right {
-  right: 20px;
+  right: -40px;
+}
+
+.lightbox-media-info {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.lightbox-close,
+.close {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
 }

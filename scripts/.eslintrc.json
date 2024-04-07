@@ -1,0 +1,16 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "standard",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    // removees rules for semicolons and double quotes
+    "avoidEscape": true,
+    "allowTemplateLiterals": true
+  }
+}
