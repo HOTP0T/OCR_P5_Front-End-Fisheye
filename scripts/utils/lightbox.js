@@ -82,7 +82,7 @@ function openLightbox(mediaSrc) {
 // Set up an event listener for DOMContentLoaded to add click event listeners to media items for opening the lightbox
 document.addEventListener('DOMContentLoaded', () => {
   const mediaContainer = document.getElementById('media-container');
-  
+
   mediaContainer.addEventListener('click', (e) => {
     let targetElement = e.target.closest('.photographer-image, .photographer-video');
     if (!targetElement) return;
