@@ -143,6 +143,13 @@ option {
   height: 300px;
   object-fit: cover;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.media-item img:hover,
+.photographer-video:hover {
+  scale: 1.1;
+  box-shadow: #312e2e 0px 0px 10px;
 }
 
 .media-details {
@@ -410,6 +417,65 @@ body.dimmed > :not(.modal_container) {
   left: 20px;
 }
 
-/* .lightbox-hidden {
+/* LIGHTBOX STYLES */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
   display: none;
-} */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+  position: relative;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox-content img, .lightbox-content video {
+  max-width: 80%; /* Adjusts the maximum width to fit the screen */
+  max-height: 80vh; /* Adjusts the maximum height to fit within the viewport height */
+  object-fit: contain; /* Ensures the aspect ratio is maintained without cropping */
+}
+
+/* Ensure the lightbox content is centered and adds some padding */
+.lightbox-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.lightbox-arrow {
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  z-index: 1010; /* Ensure arrows are above other elements */
+}
+
+.lightbox-arrow.left {
+  left: 20px;
+}
+
+.lightbox-arrow.right {
+  right: 20px;
+}
