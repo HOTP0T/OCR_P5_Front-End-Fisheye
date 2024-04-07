@@ -54,7 +54,7 @@ function photographerTemplate(photographer) {
   name.textContent = photographer.name;
   article.appendChild(name);
 
-  const location = document.createElement('p');
+  const location = document.createElement('h3');
   location.textContent = `${photographer.city}, ${photographer.country}`;
   location.className = 'photographer-location';
   article.appendChild(location);
