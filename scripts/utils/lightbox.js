@@ -1,20 +1,29 @@
+/**
+ * @fileoverview Handles the functionality for displaying a lightbox with media content (images or videos) and includes navigation controls to cycle through the media.
+ */
+
 console.log('🤖 ~ Hello from lightbox.js');
 
-// Function to open the lightbox
+/**
+ * Opens a lightbox for displaying media (image or video) and sets up navigation for cycling through media items.
+ * @param {string} mediaSrc - The source URL of the media to display initially in the lightbox.
+ */
 function openLightbox(mediaSrc) {
-  // Clear existing lightbox if any
+  // Clear existing lightbox if present
   const existingOverlay = document.querySelector('.lightbox-overlay');
   if (existingOverlay) {
     existingOverlay.remove();
   }
 
+  // Create the overlay div for the lightbox
   const lightboxOverlay = document.createElement('div');
   lightboxOverlay.className = 'lightbox-overlay';
 
+  // Create the content div within the overlay
   const lightboxContent = document.createElement('div');
   lightboxContent.className = 'lightbox-content';
 
-  // Determine if media is image or video and create appropriate element
+  // Determine if the media is an image or a video and create the appropriate element
   const mediaElement = mediaSrc.includes('.mp4') ? document.createElement('video') : document.createElement('img');
   if (mediaSrc.includes('.mp4')) {
     mediaElement.controls = true;
@@ -25,29 +34,33 @@ function openLightbox(mediaSrc) {
     mediaElement.src = mediaSrc;
   }
 
+  // Create and set up the close button for the lightbox
   const closeBtn = document.createElement('span');
   closeBtn.innerHTML = '&times;';
   closeBtn.className = 'lightbox-close';
   closeBtn.onclick = () => lightboxOverlay.remove();
 
+  // Append the media element and close button to the lightbox content, and then the content to the overlay
   lightboxContent.appendChild(mediaElement);
   lightboxOverlay.appendChild(lightboxContent);
   lightboxOverlay.appendChild(closeBtn);
 
+  // Append the overlay to the body and make it visible
   document.body.appendChild(lightboxOverlay);
   lightboxOverlay.style.display = 'flex';
 
-  // Close on outside click
+  // Set up an event listener to close the lightbox when clicking outside the media content
   lightboxOverlay.addEventListener('click', (e) => {
     if (e.target === lightboxOverlay) {
       lightboxOverlay.remove();
     }
   });
 
-  // Implement navigation arrows
+  // Fetch all media items for navigation and find the index of the current media item
   const mediaItems = Array.from(document.querySelectorAll('.photographer-image, .photographer-video'));
   let currentIndex = mediaItems.findIndex(item => item.src === mediaSrc || item.querySelector('source')?.src === mediaSrc);
 
+  // Function to navigate to the next or previous media item
   const navigate = (direction) => {
     currentIndex += direction;
     if (currentIndex >= 0 && currentIndex < mediaItems.length) {
@@ -56,7 +69,7 @@ function openLightbox(mediaSrc) {
     }
   };
 
-  // Create and append navigation arrows
+  // Create and append navigation arrows for cycling through media items
   ['left', 'right'].forEach(direction => {
     const arrow = document.createElement('span');
     arrow.className = `lightbox-arrow ${direction}`;
@@ -66,7 +79,7 @@ function openLightbox(mediaSrc) {
   });
 }
 
-// DOMContentLoaded listener moved to here if necessary
+// Set up an event listener for DOMContentLoaded to add click event listeners to media items for opening the lightbox
 document.addEventListener('DOMContentLoaded', () => {
   const mediaContainer = document.getElementById('media-container');
   

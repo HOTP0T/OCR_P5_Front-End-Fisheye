@@ -1,11 +1,22 @@
-console.log("👾 ~ Hello from photographer.js");
 
+/**
+ * Script for displaying and interacting with photographer media on a webpage.
+ * Includes functionality to sort media items, display detailed information, and manage user interactions with media items.
+ */
+console.log('👾 ~ Hello from photographer.js');
+
+/**
+ * Displays media items on the page and sorts them based on a specified criterion.
+ * @param {Array} media - Array of media items to be displayed.
+ * @param {?string} sortType - Criterion used for sorting media items. Can be 'likes', 'date', or 'title'.
+ */
 function displayPhotographerMedia(media, sortType = null) {
   const mediaContainer = document.getElementById('media-container');
   mediaContainer.innerHTML = ''; // Clear existing media content before displaying new sorted media
 
   let sortedMedia = [...media]; // Create a shallow copy of the media array to sort
 
+  // Sort media based on the specified sortType
   switch (sortType) {
     case 'likes':
       sortedMedia.sort((a, b) => b.likes - a.likes);
@@ -17,8 +28,10 @@ function displayPhotographerMedia(media, sortType = null) {
       sortedMedia.sort((a, b) => a.title.localeCompare(b.title));
       break;
   }
-    console.log(`Media after sorting by ${sortType}:`, sortedMedia); // Debugging
+  console.log(`Media after sorting by ${sortType}:`, sortedMedia);
+  // Iterate over sorted media to create and append elements to the DOM
   sortedMedia.forEach(item => {
+    // Elements creation and appending logic for media items
     const mediaElement = document.createElement('div');
     mediaElement.className = 'media-item';
 
@@ -74,6 +87,9 @@ function displayPhotographerMedia(media, sortType = null) {
   console.log("🚀 ~ displayPhotographerMedia ~ sortedMedia:", sortedMedia)
 }
 
+/**
+ * Initializes the filter options for media sorting and applies the selected sorting method.
+ */
 function initFilterOptions() {
   document.getElementById('filterOptions').addEventListener('change', async (event) => {
     const sortType = event.target.value; // Get the selected option value
@@ -88,8 +104,12 @@ function initFilterOptions() {
   });
 }
 
-
+/**
+ * Displays the total number of likes and the photographer's daily rate at the bottom of the page.
+ * @param {string} photographerId - The unique identifier of the photographer.
+ */
 async function displayPhotographerBottomInfo(photographerId) {
+  // Fetch and display photographer and media info, including total likes and price
   const { photographer, media } = await getPhotographerDetails(photographerId);
   if (photographer && media) {
     const totalLikes = calculateTotalLikes(media);
@@ -99,22 +119,25 @@ async function displayPhotographerBottomInfo(photographerId) {
   }
 }
 
+/**
+ * Calculates the total number of likes across all media items.
+ * @param {Array} media - Array of media items.
+ * @returns {number} Total number of likes across all media items.
+ */
 function calculateTotalLikes(media) {
   let totalLikes = 0;
+  // Summation logic for likes
   media.forEach(item => {
     totalLikes += item.likes;
   });
   return totalLikes;
 }
 
-function sumPhotographerLikes(media) {
-  let totalLikes = 0;
-  media.forEach(item => {
-    totalLikes += item.likes;
-  });
-  return totalLikes;
-}
-
+/**
+ * Displays the photographer's pricing information and total likes at the bottom of the page.
+ * @param {number} price - Photographer's daily rate.
+ * @param {number} totalLikes - Total number of likes across the photographer's media.
+ */
 function displayBottomInfo(price, totalLikes) {
   const bottomInfoDiv = document.createElement('div');
   bottomInfoDiv.classList.add('bottom-info');
@@ -124,7 +147,7 @@ function displayBottomInfo(price, totalLikes) {
 
   const priceElement = document.createElement('span');
   priceElement.textContent = `${price}€/jour`;
-  
+
   bottomInfoDiv.appendChild(totalLikesElement);
   bottomInfoDiv.appendChild(priceElement);
 
@@ -132,7 +155,11 @@ function displayBottomInfo(price, totalLikes) {
   bottomPinkDiv.appendChild(bottomInfoDiv);
 }
 
+/**
+ * Main initialization function to set up the webpage based on the photographer's ID from the URL.
+ */
 async function init() {
+  // Main logic for initializing the page, including fetching photographer details and setting up UI
   const urlParams = new URLSearchParams(window.location.search);
   const photographerId = urlParams.get('id');
   if (!photographerId) {
@@ -146,9 +173,9 @@ async function init() {
     displayPhotographerDetails(photographer);
     displayPhotographerMedia(media);
     displayPhotographerBottomInfo(photographerId);
-    
 
-    const totalLikes = sumPhotographerLikes(media); // Calculate total likes
+
+    const totalLikes = calculateTotalLikes(media); // Calculate total likes
     console.log(`Total Likes: ${totalLikes}`);
   } else {
     console.error('Failed to load photographer details or media.');
@@ -157,5 +184,4 @@ async function init() {
   console.log("🚀 ~ init ~ media:", media);
 }
 
-init();
-
+init(); // Execute the main function on script load.
