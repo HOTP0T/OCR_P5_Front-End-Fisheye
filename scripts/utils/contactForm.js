@@ -1,5 +1,5 @@
 /**
- * Displays the contact modal on the page.
+ * @fileoverview Displays the contact modal on the page.
  * Adds a dimmed background to the body to focus on the modal content.
  */
 function displayModal() {
