@@ -8,6 +8,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  // ensures that eslint does not lint the node_modules and out folders since they are not part of the code
   "ignorePatterns": ["**/node_modules/**", "**/out/**"],
   "rules": {
     "allowTemplateLiterals": 0,
