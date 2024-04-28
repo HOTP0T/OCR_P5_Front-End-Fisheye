@@ -2,7 +2,7 @@
  * @fileoverview This script is responsible for fetching photographer data from an external API and generating HTML content to display each photographer's information.
  */
 
-console.log("👾 ~ Hello from indexData.js");
+console.log('👾 ~ Hello from indexData.js');
 
 /**
  * Fetches photographer data from a specific API endpoint.
@@ -11,7 +11,7 @@ console.log("👾 ~ Hello from indexData.js");
  * @returns {Promise<Object>} A promise that resolves with the JSON response containing photographers' data.
  * @throws Will throw an error if the fetch operation fails.
  */
-async function getPhotographers() {
+async function getPhotographers () {
   try {
     const response = await fetch('https://api.jsonbin.io/v3/b/660d15e2ad19ca34f854284c', {
       headers: {
@@ -24,7 +24,7 @@ async function getPhotographers() {
     }
     return response.json();
   } catch (error) {
-    console.error("Failed to fetch photographers:", error);
+    console.error('Failed to fetch photographers:', error);
   }
 }
 
@@ -40,7 +40,7 @@ async function getPhotographers() {
  * @param {number} photographer.price The daily price rate of the photographer.
  * @returns {HTMLElement} An article element populated with the photographer's data.
  */
-function photographerTemplate(photographer) {
+function photographerTemplate (photographer) {
   const article = document.createElement('article');
   article.className = 'photographer-article';
 

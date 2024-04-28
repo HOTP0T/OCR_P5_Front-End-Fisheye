@@ -1,4 +1,3 @@
-
 /**
  * @fileoverview Script for displaying and interacting with photographer media on a webpage.
  * Includes functionality to sort media items, display detailed information, and manage user interactions with media items.
@@ -10,11 +9,11 @@ console.log('👾 ~ Hello from photographer.js');
  * @param {Array} media - Array of media items to be displayed.
  * @param {?string} sortType - Filter used for sorting media items. Can be 'likes', 'date', or 'title'.
  */
-function displayPhotographerMedia(media, sortType = null) {
+function displayPhotographerMedia (media, sortType = null) {
   const mediaContainer = document.getElementById('media-container');
   mediaContainer.innerHTML = ''; // Clear existing media content before displaying new sorted media
 
-  let sortedMedia = [...media]; // Create a shallow copy of the media array to sort
+  const sortedMedia = [...media]; // Create a shallow copy of the media array to sort
 
   // Sort media based on the specified sortType
   switch (sortType) {
@@ -83,14 +82,14 @@ function displayPhotographerMedia(media, sortType = null) {
     mediaElement.appendChild(mediaDetails);
     mediaContainer.appendChild(mediaElement);
   });
-  console.log("🚀 ~ displayPhotographerMedia ~ sortedMedia:", sortedMedia)
-  console.log("🚀 ~ displayPhotographerMedia ~ sortedMedia:", sortedMedia)
+  console.log('🚀 ~ displayPhotographerMedia ~ sortedMedia:', sortedMedia)
+  console.log('🚀 ~ displayPhotographerMedia ~ sortedMedia:', sortedMedia)
 }
 
 /**
  * Initializes the filter options for media sorting and applies the selected sorting method.
  */
-function initFilterOptions() {
+function initFilterOptions () {
   document.getElementById('filterOptions').addEventListener('change', async (event) => {
     const sortType = event.target.value; // Get the selected option value
 
@@ -108,7 +107,7 @@ function initFilterOptions() {
  * Displays the total number of likes and the photographer's daily rate at the bottom of the page.
  * @param {string} photographerId - The unique identifier of the photographer.
  */
-async function displayPhotographerBottomInfo(photographerId) {
+async function displayPhotographerBottomInfo (photographerId) {
   // Fetch and display photographer and media info, including total likes and price
   const { photographer, media } = await getPhotographerDetails(photographerId);
   if (photographer && media) {
@@ -124,7 +123,7 @@ async function displayPhotographerBottomInfo(photographerId) {
  * @param {Array} media - Array of media items.
  * @returns {number} Total number of likes across all media items.
  */
-function calculateTotalLikes(media) {
+function calculateTotalLikes (media) {
   let totalLikes = 0;
   // Summation logic for likes
   media.forEach(item => {
@@ -138,7 +137,7 @@ function calculateTotalLikes(media) {
  * @param {number} price - Photographer's daily rate.
  * @param {number} totalLikes - Total number of likes across the photographer's media.
  */
-function displayBottomInfo(price, totalLikes) {
+function displayBottomInfo (price, totalLikes) {
   const bottomInfoDiv = document.createElement('div');
   bottomInfoDiv.classList.add('bottom-info');
 
@@ -158,7 +157,7 @@ function displayBottomInfo(price, totalLikes) {
 /**
  * Main initialization function to set up the webpage based on the photographer's ID from the URL.
  */
-async function init() {
+async function init () {
   // Main logic for initializing the page, including fetching photographer details and setting up UI
   const urlParams = new URLSearchParams(window.location.search);
   const photographerId = urlParams.get('id');
@@ -174,14 +173,13 @@ async function init() {
     displayPhotographerMedia(media);
     displayPhotographerBottomInfo(photographerId);
 
-
     const totalLikes = calculateTotalLikes(media); // Calculate total likes
     console.log(`Total Likes: ${totalLikes}`);
   } else {
     console.error('Failed to load photographer details or media.');
   }
-  console.log("🚀 ~ init ~ photographer:", photographer);
-  console.log("🚀 ~ init ~ media:", media);
+  console.log('🚀 ~ init ~ photographer:', photographer);
+  console.log('🚀 ~ init ~ media:', media);
 }
 
 init(); // Execute the main function on script load.

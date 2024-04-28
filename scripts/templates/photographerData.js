@@ -10,7 +10,7 @@ console.log('🤖 ~ Hello from photographerData.js');
  * @param {string} photographerId - The unique identifier for the photographer.
  * @returns {Promise<Object>} An object containing details of the photographer and their media, or an error if the fetch fails.
  */
-async function getPhotographerDetails(photographerId) {
+async function getPhotographerDetails (photographerId) {
   try {
     const response = await fetch('https://api.jsonbin.io/v3/b/660d15e2ad19ca34f854284c', {
       headers: {
@@ -26,7 +26,7 @@ async function getPhotographerDetails(photographerId) {
     const media = data.record.media.filter(m => m.photographerId === parseInt(photographerId, 10));
     return { photographer, media };
   } catch (error) {
-    console.error("Failed to fetch photographer details:", error);
+    console.error('Failed to fetch photographer details:', error);
   }
 }
 
@@ -39,7 +39,7 @@ async function getPhotographerDetails(photographerId) {
  * @param {string} photographer.tagline - The photographer's tagline.
  * @param {string} photographer.portrait - The URL to the photographer's portrait image.
  */
-function displayPhotographerDetails(photographer) {
+function displayPhotographerDetails (photographer) {
   document.getElementById('photographer-name').textContent = photographer.name;
   document.getElementById('photographer-location').textContent = `${photographer.city}, ${photographer.country}`;
   document.getElementById('photographer-tagline').textContent = photographer.tagline;

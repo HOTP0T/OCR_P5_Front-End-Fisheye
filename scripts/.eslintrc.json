@@ -8,9 +8,13 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "ignorePatterns": ["**/node_modules/**", "**/out/**"],
   "rules": {
-    // removees rules for semicolons and double quotes
-    "avoidEscape": true,
-    "allowTemplateLiterals": true
+    "allowTemplateLiterals": 0,
+    "semi": 0,
+    "avoidEscape": 0,
+    // no-unused-vars && no-undef  because all vars and functions are used in the script just now in the same files, they are called in the html or through the script tags
+    "no-unused-vars": 0,
+    "no-undef": 0
   }
 }

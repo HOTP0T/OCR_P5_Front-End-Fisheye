@@ -3,29 +3,29 @@
  * Provides validation for a contact form, including name, email, and message fields.
  */
 
-console.log("👾 ~ Hello from form.js");
+console.log('👾 ~ Hello from form.js');
 
 /**
  * Adds an event listener to the form submit event.
  * Performs validation on each field according to predefined regex patterns.
  * Displays error messages for invalid fields and prevents form submission if any validation fails.
  */
-document.querySelector("#formulaire").addEventListener("submit", function (event) {
+document.querySelector('#formulaire').addEventListener('submit', function (event) {
   // Prevents the default form submission behavior to handle validation manually.
   event.preventDefault();
 
   // Flag to track the presence of any validation errors.
-  var errors = false;
+  let errors = false;
 
   // Regex patterns for validating name and email fields.
-  var regexNames = /^[a-zA-Z\xC0-\uFFFF]+([ \-']{0,1}[a-zA-Z\xC0-\uFFFF]+){0,2}[.]{0,1}$/;
-  var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const regexNames = /^[a-zA-Z\xC0-\uFFFF]+([ \-']{0,1}[a-zA-Z\xC0-\uFFFF]+){0,2}[.]{0,1}$/;
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   // DOM element references for each form field.
-  var first = document.querySelector("#first");
-  var last = document.querySelector("#last");
-  var email = document.querySelector("#email");
-  var message = document.querySelector("#message");
+  const first = document.querySelector('#first');
+  const last = document.querySelector('#last');
+  const email = document.querySelector('#email');
+  const message = document.querySelector('#message');
 
   /**
    * Validates a name field against the regexNames pattern.
@@ -33,12 +33,12 @@ document.querySelector("#formulaire").addEventListener("submit", function (event
    * @param {HTMLElement} field - The form input element to validate.
    * @param {string} errorClass - Selector for the error message element related to the field.
    */
-  function validateName(field, errorClass) {
+  function validateName (field, errorClass) {
     if (field.value.trim().length < 2 || !regexNames.test(field.value.trim())) {
-      document.querySelector(errorClass).style.display = "inline";
+      document.querySelector(errorClass).style.display = 'inline';
       errors = true;
     } else {
-      document.querySelector(errorClass).style.display = "none";
+      document.querySelector(errorClass).style.display = 'none';
     }
   }
 
@@ -49,29 +49,28 @@ document.querySelector("#formulaire").addEventListener("submit", function (event
    * @param {RegExp} regexEmail - The regex pattern used to validate the email.
    * @returns {void}
    */
-  function validateEmail() {
+  function validateEmail () {
     if (
       email.value.trim().length < 2 ||
       !email.validity.valid ||
       !regexEmail.test(email.value)
     ) {
-      document.querySelector(".errorEmail").style.display = "inline";
+      document.querySelector('.errorEmail').style.display = 'inline';
       errors = true;
     } else {
-      document.querySelector(".errorEmail").style.display = "none";
+      document.querySelector('.errorEmail').style.display = 'none';
     }
   }
 
   // Perform validation for each form field.
-  validateName(first, ".errorFirst");
-  validateName(last, ".errorLast");
+  validateName(first, '.errorFirst');
+  validateName(last, '.errorLast');
   validateEmail();
 
   // If no errors are found, close the modal.
   if (!errors) {
-    closeModal(); // Assumes closeModal() is defined elsewhere.
+    closeModal();
   }
 
-  // Returns a boolean indicating the presence of errors.
   return !errors;
 });

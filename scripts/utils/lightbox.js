@@ -8,7 +8,7 @@ console.log('🤖 ~ Hello from lightbox.js');
  * Opens a lightbox for displaying media (image or video) and sets up navigation for cycling through media items.
  * @param {string} mediaSrc - The source URL of the media to display initially in the lightbox.
  */
-function openLightbox(mediaSrc) {
+function openLightbox (mediaSrc) {
   // Clear existing lightbox if present
   const existingOverlay = document.querySelector('.lightbox-overlay');
   if (existingOverlay) {
@@ -84,10 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const mediaContainer = document.getElementById('media-container');
 
   mediaContainer.addEventListener('click', (e) => {
-    let targetElement = e.target.closest('.photographer-image, .photographer-video');
+    const targetElement = e.target.closest('.photographer-image, .photographer-video');
     if (!targetElement) return;
 
-    let mediaSrc = targetElement.src || targetElement.querySelector('source')?.src;
+    const mediaSrc = targetElement.src || targetElement.querySelector('source')?.src;
     if (mediaSrc) {
       openLightbox(mediaSrc);
     }
