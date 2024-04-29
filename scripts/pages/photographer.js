@@ -2,7 +2,7 @@
  * @fileoverview Script for displaying and interacting with photographer media on a webpage.
  * Includes functionality to sort media items, display detailed information, and manage user interactions with media items.
  */
-console.log('👾 ~ Hello from photographer.js');
+// console.log('👾 ~ Hello from photographer.js');
 
 /**
  * Displays media items on the page and sorts them based on a specified filter.
@@ -27,7 +27,7 @@ function displayPhotographerMedia (media, sortType = null) {
       sortedMedia.sort((a, b) => a.title.localeCompare(b.title));
       break;
   }
-  console.log(`Media after sorting by ${sortType}:`, sortedMedia);
+  // console.log(`Media after sorting by ${sortType}:`, sortedMedia);
   // Iterate over sorted media to create and append elements to the DOM
   sortedMedia.forEach(item => {
     // Elements creation and appending logic for media items
@@ -38,11 +38,13 @@ function displayPhotographerMedia (media, sortType = null) {
       const img = document.createElement('img');
       img.src = item.image;
       img.className = 'photographer-image';
+      img.alt = `Picture named ${item.title}`;
       mediaElement.appendChild(img);
     } else if (item.video) {
       const video = document.createElement('video');
       video.controls = true;
       video.className = 'photographer-video';
+      video.alt = `Video named ${item.title}`;
       const source = document.createElement('source');
       source.src = item.video;
       video.appendChild(source);
@@ -82,8 +84,8 @@ function displayPhotographerMedia (media, sortType = null) {
     mediaElement.appendChild(mediaDetails);
     mediaContainer.appendChild(mediaElement);
   });
-  console.log('🚀 ~ displayPhotographerMedia ~ sortedMedia:', sortedMedia)
-  console.log('🚀 ~ displayPhotographerMedia ~ sortedMedia:', sortedMedia)
+  // console.log('🚀 ~ displayPhotographerMedia ~ sortedMedia:', sortedMedia)
+  // console.log('🚀 ~ displayPhotographerMedia ~ sortedMedia:', sortedMedia)
 }
 
 /**
@@ -174,12 +176,12 @@ async function init () {
     displayPhotographerBottomInfo(photographerId);
 
     const totalLikes = calculateTotalLikes(media); // Calculate total likes
-    console.log(`Total Likes: ${totalLikes}`);
+    // console.log(`Total Likes: ${totalLikes}`);
   } else {
     console.error('Failed to load photographer details or media.');
   }
-  console.log('🚀 ~ init ~ photographer:', photographer);
-  console.log('🚀 ~ init ~ media:', media);
+  // console.log('🚀 ~ init ~ photographer:', photographer);
+  // console.log('🚀 ~ init ~ media:', media);
 }
 
 init(); // Execute the main function on script load.

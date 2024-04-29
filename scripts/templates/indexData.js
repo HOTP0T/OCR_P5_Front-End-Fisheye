@@ -2,7 +2,7 @@
  * @fileoverview This script is responsible for fetching photographer data from an external API and generating HTML content to display each photographer's information.
  */
 
-console.log('👾 ~ Hello from indexData.js');
+// console.log('👾 ~ Hello from indexData.js');
 
 /**
  * Fetches photographer data from a specific API endpoint.

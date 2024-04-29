@@ -2,7 +2,7 @@
  * @fileoverview Handles fetching and displaying details of photographers from an external API.
  */
 
-console.log('🤖 ~ Hello from photographerData.js');
+// console.log('🤖 ~ Hello from photographerData.js');
 
 /**
  * Fetches details of a specific photographer and their media from an API based on the photographer's ID.
@@ -46,4 +46,5 @@ function displayPhotographerDetails (photographer) {
   const img = document.createElement('img');
   img.src = photographer.portrait;
   document.getElementById('photographer-image').appendChild(img);
+  img.alt = `${photographer.name} - Photographer Page`;
 }

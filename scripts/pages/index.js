@@ -4,7 +4,7 @@
  * profiles from a remote source and setting up interactions.
 */
 
-console.log('👾 ~ Hello from index.js');
+// console.log('👾 ~ Hello from index.js');
 
 /**
  * Displays each photographer's data on the main page and makes them clickable.
@@ -35,7 +35,7 @@ async function init () {
   if (data && data.record && data.record.photographers) {
     displayData(data.record.photographers);
   }
-  console.log('🚀 ~ init ~ data:', data)
+  // console.log('🚀 ~ init ~ data:', data)
 }
 
 init();

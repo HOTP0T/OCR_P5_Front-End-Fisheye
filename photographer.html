@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Fisheye est un site de photographes professionnels, cette page contient les médias du profil séléctionné." />
     <link href="css/reset.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
@@ -40,23 +43,20 @@
       <div class="filter-div">
       <span class="text-filter">Trier par</span>
       <select id="filterOptions" class="filter">
-        <option value="likes" id="sort-by-likes">Popularité</option> <!-- Changed popularite to likes -->
+        <option value="likes" id="sort-by-likes">Popularité</option>
         <option value="date" id="sort-by-date">Date</option>
-        <option value="title" id="sort-by-title">Titre</option> <!-- Changed titre to title -->
+        <option value="title" id="sort-by-title">Titre</option> 
       </select>
-      
       <i class="fa-solid fa-chevron-down"></i>
     </div>
       <section class="photographer-media" id="media-container">
         <!-- Media items will be dynamically added here -->
       </section>
-
-
       <div id=bottom-pink>
       </div>
-      
+
     </main>
-    <div class="modal_container">
+    <div class="modal_container" tabindex="-1">
       <div id="contact_modal" class="modal">
         <div class="modal-content">
           <header>

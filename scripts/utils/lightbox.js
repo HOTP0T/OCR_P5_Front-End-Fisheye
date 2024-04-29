@@ -2,7 +2,7 @@
  * @fileoverview Handles the functionality for displaying a lightbox with media content (images or videos) and includes navigation controls to cycle through the media.
  */
 
-console.log('🤖 ~ Hello from lightbox.js');
+// console.log('🤖 ~ Hello from lightbox.js');
 
 /**
  * Opens a lightbox for displaying media (image or video) and sets up navigation for cycling through media items.
@@ -35,7 +35,7 @@ function openLightbox (mediaSrc) {
   }
 
   // Create and set up the close button for the lightbox
-  const closeBtn = document.createElement('span');
+  const closeBtn = document.createElement('button');
   closeBtn.innerHTML = '<img src="./assets/icons/svgtopng/close-24px 1.png" class="close" alt="close-lightbox" />';
   closeBtn.className = 'lightbox-close';
   closeBtn.onclick = () => lightboxOverlay.remove();
@@ -71,7 +71,8 @@ function openLightbox (mediaSrc) {
 
   // Create and append navigation arrows for cycling through media items
   ['left', 'right'].forEach(direction => {
-    const arrow = document.createElement('span');
+    const arrow = document.createElement('button');
+    arrow.tabIndex = 0;
     arrow.className = `lightbox-arrow ${direction}`;
     arrow.innerHTML = direction === 'left' ? '<img src="./assets/icons/svgtopng/expand_more-24px 4.png" class="arrows" alt="left-lightbox" />' : '<img src="./assets/icons/svgtopng/expand_more-24px 5.png" class="arrows" alt="right-lightbox" />';
     arrow.onclick = () => navigate(direction === 'left' ? -1 : 1);

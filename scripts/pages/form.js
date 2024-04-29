@@ -3,7 +3,7 @@
  * Provides validation for a contact form, including name, email, and message fields.
  */
 
-console.log('👾 ~ Hello from form.js');
+// console.log('👾 ~ Hello from form.js');
 
 /**
  * Adds an event listener to the form submit event.
@@ -25,7 +25,7 @@ document.querySelector('#formulaire').addEventListener('submit', function (event
   const first = document.querySelector('#first');
   const last = document.querySelector('#last');
   const email = document.querySelector('#email');
-  const message = document.querySelector('#message');
+  // const message = document.querySelector('#message');
 
   /**
    * Validates a name field against the regexNames pattern.
@@ -40,6 +40,7 @@ document.querySelector('#formulaire').addEventListener('submit', function (event
     } else {
       document.querySelector(errorClass).style.display = 'none';
     }
+    console.log(field.value);
   }
 
   /**
@@ -60,6 +61,7 @@ document.querySelector('#formulaire').addEventListener('submit', function (event
     } else {
       document.querySelector('.errorEmail').style.display = 'none';
     }
+    console.log(email.value);
   }
 
   // Perform validation for each form field.
