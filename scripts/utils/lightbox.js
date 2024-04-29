@@ -1,12 +1,7 @@
 /**
- * @fileoverview Handles the functionality for displaying a lightbox with media content (images or videos) and includes navigation controls to cycle through the media.
- */
-
-// console.log('🤖 ~ Hello from lightbox.js');
-
-/**
- * Opens a lightbox for displaying media (image or video) and sets up navigation for cycling through media items.
+ * Opens a lightbox for displaying media (image or video) and sets up navigation for cycling through media items, along with displaying the media name.
  * @param {string} mediaSrc - The source URL of the media to display initially in the lightbox.
+ * @param {string} mediaName - The name of the media to display.
  */
 function openLightbox (mediaSrc) {
   // Clear existing lightbox if present
@@ -34,14 +29,26 @@ function openLightbox (mediaSrc) {
     mediaElement.src = mediaSrc;
   }
 
+  // ADDING THE MEDIA LABEL TO THE LIGHTBOX
+  // Extracting the media name from the URL
+  const mediaName = mediaSrc.split('/').pop().split('.')[0].replace(/[^a-zA-Z0-9]/g, ' '); // Replace special characters with spaces
+  // Split the URL by '/', take the last part, and remove extension + remove special characters
+
+  // Create a label for the media name
+  const mediaLabel = document.createElement('div');
+  mediaLabel.textContent = mediaName; // Use the extracted mediaName
+  mediaLabel.className = 'media-label';
+  mediaLabel.style.cssText = 'color: black; position: absolute; bottom: 0px; left: 10px; font-size: 20px; color: #901C1C; font-family: "Raleway"'; // Styling the label
+
   // Create and set up the close button for the lightbox
   const closeBtn = document.createElement('button');
   closeBtn.innerHTML = '<img src="./assets/icons/svgtopng/close-24px 1.png" class="close" alt="close-lightbox" />';
   closeBtn.className = 'lightbox-close';
   closeBtn.onclick = () => lightboxOverlay.remove();
 
-  // Append the media element and close button to the lightbox content, and then the content to the overlay
+  // Append the media element and label to the lightbox content
   lightboxContent.appendChild(mediaElement);
+  lightboxContent.appendChild(mediaLabel); // Append the label under the media
   lightboxOverlay.appendChild(lightboxContent);
   lightboxOverlay.appendChild(closeBtn);
 

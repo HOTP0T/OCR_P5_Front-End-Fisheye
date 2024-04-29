@@ -31,7 +31,7 @@
       <section class="photographer-info">
         <!-- Placeholder for Photographer Details -->
         <div class="photographer-main-info">
-          <div id="photographer-name"></div>
+          <h1 id="photographer-name"></h1>
           <div id="photographer-location"></div>
           <div id="photographer-tagline"></div>
         </div>
@@ -42,7 +42,7 @@
       </section>
       <div class="filter-div">
       <span class="text-filter">Trier par</span>
-      <select id="filterOptions" class="filter">
+      <select id="filterOptions" class="filter" aria-label="filter">
         <option value="likes" id="sort-by-likes">Popularité</option>
         <option value="date" id="sort-by-date">Date</option>
         <option value="title" id="sort-by-title">Titre</option> 
@@ -61,14 +61,14 @@
         <div class="modal-content">
           <header>
             <div class="header-msg">
-              <h2>Contactez-moi</h2>
+              <h2 aria-label="Bouton de pour contacter le photographe">Contactez-moi</h2>
               <p>Mimi Keel</p>
             </div>
             <img
               src="assets/icons/close.svg"
               onclick="closeModal()"
               alt="Close"
-              aria-label="Close modal"
+              aria-label="Fermer le formulaire de contact"
             />
           </header>
           <form class="form" id="formulaire">

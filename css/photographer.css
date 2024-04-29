@@ -125,8 +125,6 @@ option {
   align-content: center;
   justify-content: space-between;
   align-self: center;
-
-  width: 80%;
 }
 
 .media-item {
@@ -464,7 +462,7 @@ body.dimmed > :not(.modal_container) {
 }
 
 .lightbox-arrow.left {
-  left: -15px;
+  left: -40px;
 }
 
 .lightbox-arrow.right {
