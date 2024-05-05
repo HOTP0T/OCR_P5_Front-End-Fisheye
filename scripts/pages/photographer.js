@@ -27,7 +27,7 @@ function displayPhotographerMedia (media, sortType = null) {
       sortedMedia.sort((a, b) => a.title.localeCompare(b.title));
       break;
   }
-  // console.log(`Media after sorting by ${sortType}:`, sortedMedia);
+  console.log(`Media after sorting by ${sortType}:`, sortedMedia);
   // Iterate over sorted media to create and append elements to the DOM
   sortedMedia.forEach(item => {
     // Elements creation and appending logic for media items
