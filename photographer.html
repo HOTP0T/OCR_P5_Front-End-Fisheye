@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Fisheye est un site de photographes professionnels, cette page contient les médias du profil séléctionné." />
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
+<<<<<<< HEAD
     <link rel="icon" type="image/png" href="assets/favicon.png" />
+=======
+>>>>>>> server_version
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
       rel="stylesheet"
     />
+<<<<<<< HEAD
     <title>Fisheye - photographe</title>
+=======
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/914ca5d668.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Fisheye - Photographe</title>
+>>>>>>> server_version
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html">
+        <img src="assets/logo.png" class="logo" alt="fisheye logo" />
+      </a>
     </header>
     <main id="main">
+<<<<<<< HEAD
       <div class="photograph-header">
         <button class="contact_button" onclick="displayModal()">
           Contactez-moi
@@ -38,5 +60,109 @@
     </div>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
+=======
+      <section class="photographer-info">
+        <!-- Placeholder for Photographer Details -->
+        <div class="photographer-main-info">
+          <h1 id="photographer-name"></h1>
+          <div id="photographer-location"></div>
+          <div id="photographer-tagline"></div>
+        </div>
+        <button id="openModal" onclick="displayModal()">
+          <h2>Contactez-moi</h2>
+        </button>
+        <div id="photographer-image"></div>
+      </section>
+      <div class="filter-div">
+      <span class="text-filter">Trier par</span>
+      <select id="filterOptions" class="filter" aria-label="filter">
+        <option value="likes" id="sort-by-likes">Popularité</option>
+        <option value="date" id="sort-by-date">Date</option>
+        <option value="title" id="sort-by-title">Titre</option> 
+      </select>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+      <section class="photographer-media" id="media-container">
+        <!-- Media items will be dynamically added here -->
+      </section>
+      <div id=bottom-pink>
+      </div>
+
+    </main>
+    <div class="modal_container" tabindex="-1">
+      <div id="contact_modal" class="modal">
+        <div class="modal-content">
+          <header>
+            <div class="header-msg">
+              <h2 aria-label="Bouton de pour contacter le photographe">Contactez-moi</h2>
+              <p>Mimi Keel</p>
+            </div>
+            <img
+              src="assets/icons/close.svg"
+              
+              alt="Close"
+              aria-label="Fermer le formulaire de contact"
+              id="closeModalBtn"
+            />
+          </header>
+          <form class="form" id="formulaire">
+            <div class="formData">
+              <label for="first">Prénom</label><br />
+
+              <input
+                class="text-control"
+                type="text"
+                id="first"
+                name="first"
+              />
+              <span class="error errorFirst"
+                >Veuillez entrer 2 caractères ou plus pour le champ du
+                prénom.</span
+              >
+            </div>
+            <div class="formData">
+              <label for="last">Nom</label><br />
+
+              <input class="text-control" type="text" id="last" name="last" />
+              <span class="error errorLast"
+                >Veuillez entrer 2 caractères ou plus pour le champ du
+                nom.</span
+              >
+            </div>
+            <div class="formData">
+              <label for="email">E-mail</label><br />
+
+              <input class="text-control" id="email" name="email" />
+              <span class="error errorEmail"
+                >Veuillez entrer une adresse mail valide.</span
+              >
+            </div>
+            <div class="formData">
+              <label for="email">Votre message</label><br />
+
+              <textarea
+                class="text-control"
+                id="message"
+                name="message"
+              ></textarea>
+              <span class="error errorMessage"
+                >Veuillez entrer un message.</span
+              >
+            </div>
+            <input
+              class="btn-submit formData button-submit"
+              type="submit"
+              value="C'est parti"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/templates/photographerData.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
+    <script src="scripts/utils/lightbox.js"></script>
+    <script src="scripts/pages/form.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
+>>>>>>> server_version
   </body>
 </html>

@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "standard",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  // ensures that eslint does not lint the node_modules and out folders since they are not part of the code
+  "ignorePatterns": ["**/node_modules/**", "**/out/**"],
+  "rules": {
+    "allowTemplateLiterals": 0,
+    "semi": 0,
+    "avoidEscape": 0,
+    // no-unused-vars && no-undef  because all vars and functions are used in the script just now in the same files, they are called in the html or through the script tags
+    "no-unused-vars": 0,
+    "no-undef": 0
+  }
+}

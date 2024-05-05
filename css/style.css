@@ -1,10 +1,11 @@
 @import url("photographer.css");
 
 body {
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  max-width: 1440px;
+  margin: auto;
 }
-
 
 header {
     display: flex;
@@ -17,18 +18,29 @@ header {
 h1 {
     color: #901C1C;
     margin-right: 100px;
+    font-family: "DM Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .logo {
     height: 50px;
-    margin-left: 100px;
+    margin-left: 140px;
 }
 
 .photographer_section {
+    /* display flex for 3x3 unresponsive */
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
-    margin-top: 100px;
+    width:80%;
+    justify-items: center;
+    margin-top: 75px;
+    gap: 120px;
 }
 
 .photographer_section article {
@@ -40,11 +52,65 @@ h1 {
 }
 
 .photographer_section article h2 {
-    color: #D3573C;
-    font-size: 36px;
+  color: #D3573C;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
+.photographer-location {
+  color: #901C1C;
+  font-family: "DM Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.photographer-tagline {
+  color: #525252;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.photographer-price {
+  color: #525252;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+}
+
+
 .photographer_section article img {
-    height: 200px;
-    width: 200px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+article.photographer-article {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 250px;
+  gap: 2px;
+  text-align: center;
+  text-wrap: nowrap;
+}
+
+/* adds a cursor pointer to the photographer article */
+article.photographer-article,
+button {
+  cursor: pointer;
 }

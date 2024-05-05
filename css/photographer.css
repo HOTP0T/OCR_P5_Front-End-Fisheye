@@ -1,76 +1,492 @@
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  max-width: 1440px;
+  margin: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#photographer-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+
+  margin-right: 35px;
+}
+
+.photographer-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-self: center;
+  align-items: center;
+  align-content: center;
+  width: 80%;
+  background-color: #fafafa;
+
+  margin-left: 35px;
+}
+
+#photographer-name {
+  color: #d3573c;
+  font-family: "DM Sans";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  text-wrap: wrap;
+}
+
+#photographer-location {
+  color: #901c1c;
+  font-family: "DM Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#photgrpaher-tagline {
+  color: #525252;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.filter-div {
+  height: 100px;
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+
+  margin-left: 35px;
+}
+
+.text-filter {
+  padding-right: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.fa-chevron-down {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+
+  position: relative;
+  right: 25px;
+
+  pointer-events: none;
+}
+
+/* if need remove default select style */
+select,
+option {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+#filter,
+option {
+  width: 145px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* MEDIA SECTION */
+#media-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
+  justify-items: center;
+  align-content: center;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.media-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 350px;
+}
+
+.media-item img,
+.photographer-video {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.media-item img:hover,
+.photographer-video:hover {
+  scale: 1.1;
+  box-shadow: #312e2e 0px 0px 10px;
+}
+
+.media-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  flex-wrap: nowrap;
+  width: 300px;
+  color: #901c1c;
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+h3,
+span.likes,
+i.like-button {
+  color: #901c1c;
+  font-family: "Raleway";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 1;
+  line-height: normal;
+}
+
+h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+}
+
+.like-div {
+  cursor: pointer;
+}
+
+/** MODAL STYLES **/
+/* Hides form by default */
 #contact_modal {
-    display: none;
+  display: none;
+}
+
+/* to make sure contact button is visible */
+#openModal {
+  display: block;
 }
 
 .photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
+  background-color: #fafafa;
+  height: 300px;
+  margin: 0 80px;
 }
 
-.contact_button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    width: 170px;
-    height: 70px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
+#openModal,
+select {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#openModal:hover {
+  background-color: #db8876;
+  color: black;
 }
 
 .modal {
-    border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 35px;
-    margin: auto;
+  border-radius: 5px;
+  background-color: #db8876;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  margin: auto;
 }
 
 .modal header {
-    justify-content: space-between;
-    width: 100%;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-msg {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.modal header h2,
+.modal header p {
+  color: #000;
+  font-family: "DM Sans";
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .modal header img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.modal header h2 {
-    font-size: 64px;
-    font-weight: normal;
-    text-align: center;
+.modal_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+div#contact_modal.modal {
+  position: fixed;
+  top: 0;
+  width: 40%;
+  margin: auto;
+  z-index: 1;
+  gap: 20px;
+  margin-top: 50px;
 }
 
 form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  margin-top: 20px;
 }
 
 form label {
-    color: #312E2E;
-    font-size: 36px;
+  color: #312e2e;
+  font-size: 27px;
 }
 
 form div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: self-start;
-    margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: self-start;
+  margin-bottom: 26px;
 }
 
-form input {
-    width: 100%;
-    height: 68px;
-    border: none;
-    border-radius: 5px;
+form input,
+textarea {
+  width: 100%;
+  height: 68px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Adjusted dimming approach */
+body.dimmed > :not(.modal_container) {
+  opacity: 0.5;
+}
+
+.error {
+  display: none;
+  color: #68060f;
+  font-size: 0.85rem;
+}
+
+.bottom-info {
+  position: fixed;
+  bottom: 0;
+  right: 60px;
+
+  border-radius: 5px 5px 0 0;
+  background: #db8876;
+  height: 50px;
+  width: 270px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 20px;
+}
+
+.modal-open {
+  overflow: hidden; /* Prevent scrolling on the body */
+}
+
+.bottom-info span {
+  font-size: 18px;
+}
+
+/* LIGHTBOX STYLES */
+.lightbox-hidden {
+  display: none;
+}
+
+#lightbox {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+#close-lightbox {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#prev,
+#next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 50px;
+  color: white;
+  user-select: none;
+}
+
+#prev {
+  left: 30px;
+}
+
+#next {
+  right: 30px;
+}
+
+#media-title {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+/* LIGHTBOX STYLES */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+
+  font-size: 30px;
+  color: rgb(11, 11, 11);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.lightbox-content img,
+.lightbox-content video {
+  
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+/* Ensure the lightbox content is centered and adds some padding */
+.lightbox-content {
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.lightbox-arrow {
+  cursor: pointer;
+  font-size: 30px;
+  color: rgb(3, 3, 3);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  z-index: 1010;
+  background: none;
+  border: none;
+}
+
+.lightbox-arrow.left {
+  left: -40px;
+}
+
+.lightbox-arrow.right {
+  right: -40px;
+}
+
+/* TODO wtf is this ? */
+.lightbox-media-info {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.media-label {
+  font-size: 20px;
+  color: #901c1c;
+  font-family: "Raleway";
+}
+
+.lightbox-close,
+.close {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
 }
