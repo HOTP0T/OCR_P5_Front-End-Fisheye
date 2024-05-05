@@ -64,10 +64,21 @@ document.querySelector('#formulaire').addEventListener('submit', function (event
     console.log(email.value);
   }
 
+  function validateMessage () {
+    if (message.value.trim().length < 2) {
+      document.querySelector('.errorMessage').style.display = 'inline';
+      errors = true;
+    } else {
+      document.querySelector('.errorMessage').style.display = 'none';
+    }
+    console.log(message.value);
+  }
+
   // Perform validation for each form field.
   validateName(first, '.errorFirst');
   validateName(last, '.errorLast');
   validateEmail();
+  validateMessage();
 
   // If no errors are found, close the modal.
   if (!errors) {

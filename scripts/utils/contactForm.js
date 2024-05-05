@@ -17,3 +17,9 @@ function closeModal () {
   document.body.classList.remove('dimmed');
   modal.style.display = 'none';
 }
+
+/**
+ * Closes the modal by hiding the modal container and overlay.
+ */
+const closeModalBtn = document.getElementById('closeModalBtn');
+closeModalBtn.addEventListener('click', closeModal);
