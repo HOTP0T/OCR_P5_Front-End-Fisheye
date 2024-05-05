@@ -25,7 +25,7 @@ document.querySelector('#formulaire').addEventListener('submit', function (event
   const first = document.querySelector('#first');
   const last = document.querySelector('#last');
   const email = document.querySelector('#email');
-  // const message = document.querySelector('#message');
+  const message = document.querySelector('#message');
 
   /**
    * Validates a name field against the regexNames pattern.
@@ -64,6 +64,13 @@ document.querySelector('#formulaire').addEventListener('submit', function (event
     console.log(email.value);
   }
 
+  /**
+   * Validates the message field to ensure it contains at least 2 characters.
+   * Displays or hides the message error message based on the validation result.
+   * @param {HTMLElement} message - The form input element to validate.
+   * @param {string} errorClass - Selector for the error message element related to the field.
+   * @returns {void}
+   */
   function validateMessage () {
     if (message.value.trim().length < 2) {
       document.querySelector('.errorMessage').style.display = 'inline';

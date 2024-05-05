@@ -413,18 +413,22 @@ body.dimmed > :not(.modal_container) {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  
 }
 
 .lightbox-content {
   max-width: 90%;
   max-height: 80%;
-  position: relative;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .lightbox-close {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 1px;
+  right: 1px;
+
   font-size: 30px;
   color: rgb(11, 11, 11);
   cursor: pointer;
@@ -434,7 +438,7 @@ body.dimmed > :not(.modal_container) {
 
 .lightbox-content img,
 .lightbox-content video {
-  max-width: 80%;
+  
   max-height: 80vh;
   object-fit: contain;
 }
@@ -442,8 +446,6 @@ body.dimmed > :not(.modal_container) {
 /* Ensure the lightbox content is centered and adds some padding */
 .lightbox-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 20px;
   box-sizing: border-box;
 }
@@ -469,10 +471,17 @@ body.dimmed > :not(.modal_container) {
   right: -40px;
 }
 
+/* TODO wtf is this ? */
 .lightbox-media-info {
   color: rgb(0, 0, 0);
   text-align: center;
   margin-top: 20px;
+}
+
+.media-label {
+  font-size: 20px;
+  color: #901c1c;
+  font-family: "Raleway";
 }
 
 .lightbox-close,

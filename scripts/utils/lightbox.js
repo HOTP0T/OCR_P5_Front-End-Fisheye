@@ -20,6 +20,7 @@ function openLightbox (mediaSrc) {
 
   // Determine if the media is an image or a video and create the appropriate element
   const mediaElement = mediaSrc.includes('.mp4') ? document.createElement('video') : document.createElement('img');
+  mediaElement.className = 'lightbox-displayed-media';
   if (mediaSrc.includes('.mp4')) {
     mediaElement.controls = true;
     const source = document.createElement('source');
@@ -38,7 +39,6 @@ function openLightbox (mediaSrc) {
   const mediaLabel = document.createElement('div');
   mediaLabel.textContent = mediaName; // Use the extracted mediaName
   mediaLabel.className = 'media-label';
-  mediaLabel.style.cssText = 'color: black; position: absolute; bottom: 0px; left: 10px; font-size: 20px; color: #901C1C; font-family: "Raleway"'; // Styling the label
 
   // Create and set up the close button for the lightbox
   const closeBtn = document.createElement('button');
