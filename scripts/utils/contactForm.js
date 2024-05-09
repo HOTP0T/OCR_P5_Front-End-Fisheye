@@ -23,3 +23,6 @@ function closeModal () {
  */
 const closeModalBtn = document.getElementById('closeModalBtn');
 closeModalBtn.addEventListener('click', closeModal);
+
+const openModalBtn = document.getElementById('openModal');
+openModalBtn.addEventListener('click', displayModal);
