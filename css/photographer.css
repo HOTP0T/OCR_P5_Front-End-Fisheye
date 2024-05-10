@@ -491,6 +491,7 @@ body.dimmed > :not(.modal_container) {
   width: 50px;
 }
 
+/* not needed because the selected element is no longer in use, keeping it here in case re-use */
 .filterInput-dispNone {
   display: none;
 }
