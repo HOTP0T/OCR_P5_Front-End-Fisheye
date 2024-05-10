@@ -490,3 +490,7 @@ body.dimmed > :not(.modal_container) {
   height: 50px;
   width: 50px;
 }
+
+.filterInput-dispNone {
+  display: none;
+}
