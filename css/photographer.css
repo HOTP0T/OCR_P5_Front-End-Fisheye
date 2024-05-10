@@ -204,6 +204,8 @@ h3 {
   margin: 0 80px;
 }
 
+.btn-submit,
+.btn-submit:hover,
 #openModal,
 select {
   font-size: 18px;
@@ -489,6 +491,10 @@ body.dimmed > :not(.modal_container) {
   cursor: pointer;
   height: 50px;
   width: 50px;
+}
+
+.SubmitNoDisp {
+  display: none;
 }
 
 /* not needed because the selected element is no longer in use, keeping it here in case re-use */
