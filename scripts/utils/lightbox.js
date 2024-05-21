@@ -118,4 +118,16 @@ document.addEventListener('DOMContentLoaded', () => {
       openLightbox(mediaSrc);
     }
   });
+
+  mediaContainer.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const targetElement = document.activeElement.closest('.photographer-image, .photographer-video');
+      if (!targetElement) return;
+
+      const mediaSrc = targetElement.src || targetElement.querySelector('source')?.src;
+      if (mediaSrc) {
+        openLightbox(mediaSrc);
+      }
+    }
+  });
 });

@@ -22,8 +22,8 @@ async function getPhotographerDetails(photographerId) {
     const data = await response.json();
     const photographer = data.record.photographers.find(p => p.id === parseInt(photographerId, 10));
     const media = data.record.media.filter(m => m.photographerId === parseInt(photographerId, 10));
-    console.log('Fetched photographer details:', photographer);
-    console.log('Fetched media:', media);
+    // console.log('Fetched photographer details:', photographer);
+    // console.log('Fetched media:', media);
     return { photographer, media };
   } catch (error) {
     console.error('Failed to fetch photographer details:', error);
@@ -151,7 +151,7 @@ async function displayPhotographerBottomInfo(photographerId) {
   if (photographer && media) {
     const totalLikes = calculateTotalLikes(media);
     displayBottomInfo(photographer.price, totalLikes);
-    console.log('Displayed bottom info with total likes and price:', photographer.price, totalLikes);
+    // console.log('Displayed bottom info with total likes and price:', photographer.price, totalLikes);
   } else {
     console.error('Failed to load photographer details or media.');
   }
@@ -216,6 +216,16 @@ async function updateBottomInfo() {
 }
 
 /**
+ * Updates the form header with the photographer's name.
+ * @param {string} name - The photographer's name.
+ */
+function updateFormHeader(name) {
+  const formHeader = document.querySelector('#contact_modal h2');
+  formHeader.textContent = `Contactez-moi ${name}`;
+  // console.log('Updated form header with photographer name:', name);
+}
+
+/**
  * Main initialization function to set up the webpage based on the photographer's ID from the URL.
  */
 async function init() {
@@ -233,7 +243,10 @@ async function init() {
     displayPhotographerMedia(media);
     displayPhotographerBottomInfo(photographerId);
 
-    console.log('Initialized page with photographer details and media:', photographer, media);
+    // Update the form header with the photographer's name
+    updateFormHeader(photographer.name);
+
+    // console.log('Initialized page with photographer details and media:', photographer, media);
   } else {
     console.error('Failed to load photographer details or media.');
   }
