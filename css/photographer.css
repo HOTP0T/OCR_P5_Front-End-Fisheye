@@ -274,7 +274,7 @@ div#contact_modal.modal {
   position: fixed;
   top: 0;
   width: 40%;
-  margin: auto;
+
   z-index: 1;
   gap: 20px;
   margin-top: 50px;
@@ -285,7 +285,16 @@ form {
   width: 100%;
   flex-direction: column;
 
-  margin-top: 20px;
+  margin-top: 45px;
+}
+
+#id-photographer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 10px;
 }
 
 form label {
