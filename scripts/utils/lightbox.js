@@ -3,7 +3,7 @@
  * @param {string} mediaSrc - The source URL of the media to display initially in the lightbox.
  * @param {string} mediaName - The name of the media to display.
  */
-function openLightbox (mediaSrc) {
+function openLightbox(mediaSrc) {
   // Clear existing lightbox if present
   const existingOverlay = document.querySelector('.lightbox-overlay');
   if (existingOverlay) {
@@ -46,6 +46,14 @@ function openLightbox (mediaSrc) {
   closeBtn.className = 'lightbox-close';
   closeBtn.onclick = () => lightboxOverlay.remove();
 
+  // Function to close the lightbox
+  const closeLightbox = () => {
+    lightboxOverlay.remove();
+    document.removeEventListener('keydown', handleEscapeKey); // Remove event listener for escape key
+  };
+
+  closeBtn.onclick = closeLightbox;
+
   // Append the media element and label to the lightbox content
   lightboxContent.appendChild(mediaElement);
   lightboxContent.appendChild(mediaLabel); // Append the label under the media
@@ -59,9 +67,19 @@ function openLightbox (mediaSrc) {
   // Set up an event listener to close the lightbox when clicking outside the media content
   lightboxOverlay.addEventListener('click', (e) => {
     if (e.target === lightboxOverlay) {
-      lightboxOverlay.remove();
+      closeLightbox();
     }
   });
+
+  // Function to handle escape key press
+  const handleEscapeKey = (e) => {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  };
+
+  // Add event listener for escape key
+  document.addEventListener('keydown', handleEscapeKey);
 
   // Fetch all media items for navigation and find the index of the current media item
   const mediaItems = Array.from(document.querySelectorAll('.photographer-image, .photographer-video'));
