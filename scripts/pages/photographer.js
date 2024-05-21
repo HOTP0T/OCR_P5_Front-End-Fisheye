@@ -2,16 +2,50 @@
  * @fileoverview Script for displaying and interacting with photographer media on a webpage.
  * Includes functionality to sort media items, display detailed information, and manage user interactions with media items.
  */
-// console.log('👾 ~ Hello from photographer.js');
+
+/**
+ * Fetches details of a specific photographer and their media from an API based on the photographer's ID.
+ * @async
+ * @param {string} photographerId - The unique identifier for the photographer.
+ * @returns {Promise<Object>} An object containing details of the photographer and their media, or an error if the fetch fails.
+ */
+async function getPhotographerDetails(photographerId) {
+  try {
+    const response = await fetch('https://api.jsonbin.io/v3/b/660d15e2ad19ca34f854284c', {
+      headers: {
+        'X-Master-Key': '$2a$10$qbfGIDJdT4VtlhBqXNLnXO5PaWdVaDRbrEJjAk6T5riM8VLv7mP.a'
+      }
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    const photographer = data.record.photographers.find(p => p.id === parseInt(photographerId, 10));
+    const media = data.record.media.filter(m => m.photographerId === parseInt(photographerId, 10));
+    console.log('Fetched photographer details:', photographer);
+    console.log('Fetched media:', media);
+    return { photographer, media };
+  } catch (error) {
+    console.error('Failed to fetch photographer details:', error);
+  }
+}
 
 /**
  * Displays media items on the page and sorts them based on a specified filter.
  * @param {Array} media - Array of media items to be displayed.
  * @param {?string} sortType - Filter used for sorting media items. Can be 'likes', 'date', or 'title'.
  */
-function displayPhotographerMedia (media, sortType = null) {
+function displayPhotographerMedia(media, sortType = null) {
   const mediaContainer = document.getElementById('media-container');
   mediaContainer.innerHTML = ''; // Clear existing media content before displaying new sorted media
+
+  // Load likes from local storage
+  media.forEach(item => {
+    const storedLikes = localStorage.getItem(`media-${item.id}-likes`);
+    if (storedLikes) {
+      item.likes = parseInt(storedLikes, 10);
+    }
+  });
 
   const sortedMedia = [...media]; // Create a shallow copy of the media array to sort
 
@@ -27,10 +61,11 @@ function displayPhotographerMedia (media, sortType = null) {
       sortedMedia.sort((a, b) => a.title.localeCompare(b.title));
       break;
   }
+
   console.log(`Media after sorting by ${sortType}:`, sortedMedia);
+
   // Iterate over sorted media to create and append elements to the DOM
   sortedMedia.forEach(item => {
-    // Elements creation and appending logic for media items
     const mediaElement = document.createElement('div');
     mediaElement.className = 'media-item';
 
@@ -64,17 +99,21 @@ function displayPhotographerMedia (media, sortType = null) {
     const likes = document.createElement('span');
     likes.textContent = `${item.likes}`;
     likes.className = 'likes';
-    likes.onclick = () => {
-      item.likes += 1;
-      likes.textContent = `${item.likes}`;
-    };
+
     const likeButton = document.createElement('i');
     likeButton.className = 'like-button';
     likeButton.innerHTML = '&#x2764;';
-    likeButton.onclick = () => {
-      item.likes += 1;
+
+    const updateLikes = (increment) => {
+      item.likes += increment;
+      localStorage.setItem(`media-${item.id}-likes`, item.likes);
       likes.textContent = `${item.likes}`;
+      updateBottomInfo();
+      console.log(`Updated likes for media ${item.id}:`, item.likes);
     };
+
+    likes.onclick = () => updateLikes(1);
+    likeButton.onclick = () => updateLikes(1);
 
     likeDiv.appendChild(likes);
     likeDiv.appendChild(likeButton);
@@ -84,14 +123,12 @@ function displayPhotographerMedia (media, sortType = null) {
     mediaElement.appendChild(mediaDetails);
     mediaContainer.appendChild(mediaElement);
   });
-  // console.log('🚀 ~ displayPhotographerMedia ~ sortedMedia:', sortedMedia)
-  // console.log('🚀 ~ displayPhotographerMedia ~ sortedMedia:', sortedMedia)
 }
 
 /**
  * Initializes the filter options for media sorting and applies the selected sorting method.
  */
-function initFilterOptions () {
+function initFilterOptions() {
   document.getElementById('filterOptions').addEventListener('change', async (event) => {
     const sortType = event.target.value; // Get the selected option value
 
@@ -109,12 +146,12 @@ function initFilterOptions () {
  * Displays the total number of likes and the photographer's daily rate at the bottom of the page.
  * @param {string} photographerId - The unique identifier of the photographer.
  */
-async function displayPhotographerBottomInfo (photographerId) {
-  // Fetch and display photographer and media info, including total likes and price
+async function displayPhotographerBottomInfo(photographerId) {
   const { photographer, media } = await getPhotographerDetails(photographerId);
   if (photographer && media) {
     const totalLikes = calculateTotalLikes(media);
     displayBottomInfo(photographer.price, totalLikes);
+    console.log('Displayed bottom info with total likes and price:', photographer.price, totalLikes);
   } else {
     console.error('Failed to load photographer details or media.');
   }
@@ -125,11 +162,16 @@ async function displayPhotographerBottomInfo (photographerId) {
  * @param {Array} media - Array of media items.
  * @returns {number} Total number of likes across all media items.
  */
-function calculateTotalLikes (media) {
+function calculateTotalLikes(media) {
   let totalLikes = 0;
   // Summation logic for likes
   media.forEach(item => {
-    totalLikes += item.likes;
+    const storedLikes = localStorage.getItem(`media-${item.id}-likes`);
+    if (storedLikes) {
+      totalLikes += parseInt(storedLikes, 10);
+    } else {
+      totalLikes += item.likes;
+    }
   });
   return totalLikes;
 }
@@ -139,28 +181,44 @@ function calculateTotalLikes (media) {
  * @param {number} price - Photographer's daily rate.
  * @param {number} totalLikes - Total number of likes across the photographer's media.
  */
-function displayBottomInfo (price, totalLikes) {
+function displayBottomInfo(price, totalLikes) {
   const bottomInfoDiv = document.createElement('div');
   bottomInfoDiv.classList.add('bottom-info');
 
   const totalLikesElement = document.createElement('span');
-  totalLikesElement.textContent = `${totalLikes}♥︎`;
+  totalLikesElement.id = 'total-likes';
+  totalLikesElement.textContent = `${totalLikes} ♥︎`;
 
   const priceElement = document.createElement('span');
-  priceElement.textContent = `${price}€/jour`;
+  priceElement.textContent = `${price} €/jour`;
 
   bottomInfoDiv.appendChild(totalLikesElement);
   bottomInfoDiv.appendChild(priceElement);
 
   const bottomPinkDiv = document.getElementById('bottom-pink');
+  bottomPinkDiv.innerHTML = ''; // Clear existing content
   bottomPinkDiv.appendChild(bottomInfoDiv);
+}
+
+/**
+ * Updates the bottom information dynamically.
+ */
+async function updateBottomInfo() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const photographerId = urlParams.get('id');
+  const { media } = await getPhotographerDetails(photographerId);
+  const totalLikes = calculateTotalLikes(media);
+  const totalLikesElement = document.getElementById('total-likes');
+  if (totalLikesElement) {
+    totalLikesElement.textContent = `${totalLikes} ♥︎`;
+    console.log('Updated total likes in bottom info:', totalLikes);
+  }
 }
 
 /**
  * Main initialization function to set up the webpage based on the photographer's ID from the URL.
  */
-async function init () {
-  // Main logic for initializing the page, including fetching photographer details and setting up UI
+async function init() {
   const urlParams = new URLSearchParams(window.location.search);
   const photographerId = urlParams.get('id');
   if (!photographerId) {
@@ -175,13 +233,10 @@ async function init () {
     displayPhotographerMedia(media);
     displayPhotographerBottomInfo(photographerId);
 
-    const totalLikes = calculateTotalLikes(media); // Calculate total likes
-    // console.log(`Total Likes: ${totalLikes}`);
+    console.log('Initialized page with photographer details and media:', photographer, media);
   } else {
     console.error('Failed to load photographer details or media.');
   }
-  // console.log('🚀 ~ init ~ photographer:', photographer);
-  // console.log('🚀 ~ init ~ media:', media);
 }
 
 init(); // Execute the main function on script load.
