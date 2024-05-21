@@ -41,30 +41,36 @@ async function getPhotographers () {
 function photographerTemplate (photographer) {
   const article = document.createElement('article');
   article.className = 'photographer-article';
+  article.tabIndex = 0;
 
   const img = document.createElement('img');
   img.src = photographer.portrait;
   img.alt = `Portrait of ${photographer.name}`;
   img.className = 'photographer-portrait';
+  img.tabIndex = 0;
   article.appendChild(img);
 
   const name = document.createElement('h2');
   name.textContent = photographer.name;
+  name.tabIndex = 0;
   article.appendChild(name);
 
   const location = document.createElement('h3');
   location.textContent = `${photographer.city}, ${photographer.country}`;
   location.className = 'photographer-location';
+  location.tabIndex = 0;
   article.appendChild(location);
 
   const tagline = document.createElement('p');
   tagline.textContent = photographer.tagline;
   tagline.className = 'photographer-tagline';
+  tagline.tabIndex = 0;
   article.appendChild(tagline);
 
   const price = document.createElement('p');
   price.textContent = `${photographer.price}€/jour`;
   price.className = 'photographer-price';
+  price.tabIndex = 0;
   article.appendChild(price);
 
   return article;

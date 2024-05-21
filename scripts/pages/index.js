@@ -18,9 +18,22 @@ async function displayData (photographers) {
 
   photographers.forEach((photographer) => {
     const userCardDOM = photographerTemplate(photographer);
-    userCardDOM.addEventListener('click', () => {
+    
+    const navigateToDetailPage = () => {
       window.location.href = `photographer.html?id=${photographer.id}`;
+    };
+
+    userCardDOM.addEventListener('click', navigateToDetailPage);
+
+    userCardDOM.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        navigateToDetailPage();
+      }
     });
+
+    // Make the card focusable
+    userCardDOM.tabIndex = 0;
+
     photographersSection.appendChild(userCardDOM);
   });
 }
