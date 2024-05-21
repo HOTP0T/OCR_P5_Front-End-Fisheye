@@ -2,19 +2,16 @@
  * @fileoverview Handles fetching and displaying details of photographers from an external API.
  */
 
-// console.log('🤖 ~ Hello from photographerData.js');
-
 /**
  * Fetches details of a specific photographer and their media from an API based on the photographer's ID.
  * @async
  * @param {string} photographerId - The unique identifier for the photographer.
  * @returns {Promise<Object>} An object containing details of the photographer and their media, or an error if the fetch fails.
  */
-async function getPhotographerDetails (photographerId) {
+async function getPhotographerDetails(photographerId) {
   try {
     const response = await fetch('https://api.jsonbin.io/v3/b/660d15e2ad19ca34f854284c', {
       headers: {
-        // Reminder: Secure your API keys properly; this is for demonstration purposes only.
         'X-Master-Key': '$2a$10$qbfGIDJdT4VtlhBqXNLnXO5PaWdVaDRbrEJjAk6T5riM8VLv7mP.a'
       }
     });
@@ -39,12 +36,35 @@ async function getPhotographerDetails (photographerId) {
  * @param {string} photographer.tagline - The photographer's tagline.
  * @param {string} photographer.portrait - The URL to the photographer's portrait image.
  */
-function displayPhotographerDetails (photographer) {
-  document.getElementById('photographer-name').textContent = photographer.name;
-  document.getElementById('photographer-location').textContent = `${photographer.city}, ${photographer.country}`;
-  document.getElementById('photographer-tagline').textContent = photographer.tagline;
+function displayPhotographerDetails(photographer) {
+  // Ensuring the photographer details container is accessible
+  const photographerName = document.getElementById('photographer-name');
+  photographerName.textContent = photographer.name;
+  photographerName.tabIndex = 0; // Adding tabindex for focusability
+  
+  const photographerLocation = document.getElementById('photographer-location');
+  photographerLocation.textContent = `${photographer.city}, ${photographer.country}`;
+  photographerLocation.tabIndex = 0; // Adding tabindex for focusability
+  
+  const photographerTagline = document.getElementById('photographer-tagline');
+  photographerTagline.textContent = photographer.tagline;
+  photographerTagline.tabIndex = 0; // Adding tabindex for focusability
+  
+  const photographerImageContainer = document.getElementById('photographer-image');
+  photographerImageContainer.innerHTML = ''; // Clear existing content
   const img = document.createElement('img');
   img.src = photographer.portrait;
-  document.getElementById('photographer-image').appendChild(img);
-  img.alt = `${photographer.name} - Photographer Page`;
+  img.alt = `${photographer.name} - Portrait`; // Ensuring the image has meaningful alt text
+  img.tabIndex = 0; // Adding tabindex for focusability
+  photographerImageContainer.appendChild(img);
 }
+
+// Set up an event listener for DOMContentLoaded to fetch and display photographer details
+document.addEventListener('DOMContentLoaded', async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const photographerId = urlParams.get('id');
+  if (photographerId) {
+    const { photographer } = await getPhotographerDetails(photographerId);
+    displayPhotographerDetails(photographer);
+  }
+});
