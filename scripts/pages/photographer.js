@@ -22,8 +22,8 @@ async function getPhotographerDetails(photographerId) {
     const data = await response.json();
     const photographer = data.record.photographers.find(p => p.id === parseInt(photographerId, 10));
     const media = data.record.media.filter(m => m.photographerId === parseInt(photographerId, 10));
-    // console.log('Fetched photographer details:', photographer);
-    // console.log('Fetched media:', media);
+    console.log('Fetched photographer details:', photographer);
+    console.log('Fetched media:', media);
     return { photographer, media };
   } catch (error) {
     console.error('Failed to fetch photographer details:', error);
@@ -233,7 +233,7 @@ async function init() {
     displayPhotographerMedia(media);
     displayPhotographerBottomInfo(photographerId);
 
-    // console.log('Initialized page with photographer details and media:', photographer, media);
+    console.log('Initialized page with photographer details and media:', photographer, media);
   } else {
     console.error('Failed to load photographer details or media.');
   }

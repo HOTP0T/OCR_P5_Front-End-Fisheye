@@ -6,6 +6,41 @@
 // console.log('👾 ~ Hello from form.js');
 
 /**
+ * Fetches details of a specific photographer from an API based on the photographer's ID.
+ * @async
+ * @param {string} photographerId - The unique identifier for the photographer.
+ * @returns {Promise<Object>} An object containing details of the photographer, or an error if the fetch fails.
+ */
+async function getPhotographerDetails(photographerId) {
+  try {
+    const response = await fetch('https://api.jsonbin.io/v3/b/660d15e2ad19ca34f854284c', {
+      headers: {
+        'X-Master-Key': '$2a$10$qbfGIDJdT4VtlhBqXNLnXO5PaWdVaDRbrEJjAk6T5riM8VLv7mP.a'
+      }
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    const photographer = data.record.photographers.find(p => p.id === parseInt(photographerId, 10));
+    console.log('Fetched photographer details for form:', photographer);
+    return photographer;
+  } catch (error) {
+    console.error('Failed to fetch photographer details for form:', error);
+  }
+}
+
+/**
+ * Updates the form header with the photographer's name.
+ * @param {string} name - The photographer's name.
+ */
+function updateFormHeader(name) {
+  const formHeader = document.querySelector('#contact_modal h2');
+  formHeader.textContent = `Contactez-moi ${name}`;
+  console.log('Updated form header with photographer name:', name);
+}
+
+/**
  * Adds an event listener to the form submit event.
  * Performs validation on each field according to predefined regex patterns.
  * Displays error messages for invalid fields and prevents form submission if any validation fails.
@@ -33,7 +68,7 @@ document.querySelector('#formulaire').addEventListener('submit', function (event
    * @param {HTMLElement} field - The form input element to validate.
    * @param {string} errorClass - Selector for the error message element related to the field.
    */
-  function validateName (field, errorClass) {
+  function validateName(field, errorClass) {
     if (field.value.trim().length < 2 || !regexNames.test(field.value.trim())) {
       document.querySelector(errorClass).style.display = 'inline';
       errors = true;
@@ -50,7 +85,7 @@ document.querySelector('#formulaire').addEventListener('submit', function (event
    * @param {RegExp} regexEmail - The regex pattern used to validate the email.
    * @returns {void}
    */
-  function validateEmail () {
+  function validateEmail() {
     if (
       email.value.trim().length < 2 ||
       !email.validity.valid ||
@@ -71,7 +106,7 @@ document.querySelector('#formulaire').addEventListener('submit', function (event
    * @param {string} errorClass - Selector for the error message element related to the field.
    * @returns {void}
    */
-  function validateMessage () {
+  function validateMessage() {
     if (message.value.trim().length < 2) {
       document.querySelector('.errorMessage').style.display = 'inline';
       errors = true;
@@ -94,3 +129,24 @@ document.querySelector('#formulaire').addEventListener('submit', function (event
 
   return !errors;
 });
+
+/**
+ * Main initialization function to set up the form with the photographer's name.
+ */
+async function initForm() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const photographerId = urlParams.get('id');
+  if (!photographerId) {
+    console.error('Photographer ID is required for the form.');
+    return;
+  }
+
+  const photographer = await getPhotographerDetails(photographerId);
+  if (photographer) {
+    updateFormHeader(photographer.name);
+  } else {
+    console.error('Failed to load photographer details for the form.');
+  }
+}
+
+initForm(); // Execute the form initialization function on script load.

@@ -7,7 +7,7 @@
       "country": "UK",
       "tagline": "Voir le beau dans le quotidien",
       "price": 400,
-      "portrait": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Mimi/profile/MimiKeel.webp"
+      "portrait": "assets/images/webp/Mimi/profile/MimiKeel.webp"
     },
     {
       "name": "Ellie-Rose Wilkens",
@@ -16,7 +16,7 @@
       "country": "France",
       "tagline": "Capturer des compositions complexes",
       "price": 250,
-      "portrait": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Ellie+Rose/profile/EllieRoseWilkens.webp"
+      "portrait": "assets/images/webp/Ellie Rose/profile/EllieRoseWilkens.webp"
     },
     {
       "name": "Tracy Galindo",
@@ -25,7 +25,7 @@
       "country": "Canada",
       "tagline": "Photographe freelance",
       "price": 500,
-      "portrait": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Tracy/profile/TracyGalindo.webp"
+      "portrait": "assets/images/webp/Tracy/profile/TracyGalindo.webp"
     },
     {
       "name": "Nabeel Bradford",
@@ -34,7 +34,7 @@
       "country": "Mexico",
       "tagline": "Toujours aller de l'avant",
       "price": 350,
-      "portrait": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Nabeel/profile/NabeelBradford.webp"
+      "portrait": "assets/images/webp/Nabeel/profile/NabeelBradford.webp"
     },
     {
       "name": "Rhode Dubois",
@@ -43,7 +43,7 @@
       "country": "Spain",
       "tagline": "Je crée des souvenirs",
       "price": 275,
-      "portrait": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Rhode/profile/RhodeDubois.webp"
+      "portrait": "assets/images/webp/Rhode/profile/RhodeDubois.webp"
     },
     {
       "name": "Marcel Nikolic",
@@ -52,7 +52,7 @@
       "country": "Germany",
       "tagline": "Toujours à la recherche de LA photo",
       "price": 300,
-      "portrait": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Marcel/profile/MarcelNikolic.webp"
+      "portrait": "assets/images/webp/Marcel/profile/MarcelNikolic.webp"
     }
   ],
   "media": [
@@ -60,7 +60,7 @@
       "id": 342550,
       "photographerId": 82,
       "title": "Fashion Yellow Beach",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Tracy/images/Fashion_Yellow_Beach.webp",
+      "image": "./assets/images/webp/Tracy/images/Fashion_Yellow_Beach.webp",
       "likes": 62,
       "date": "2011-12-08",
       "price": 55
@@ -69,7 +69,7 @@
       "id": 8520927,
       "photographerId": 82,
       "title": "Fashion Urban Jungle",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Tracy/images/Fashion_Urban_Jungle.webp",
+      "image": "./assets/images/webp/Tracy/images/Fashion_Urban_Jungle.webp",
       "likes": 11,
       "date": "2011-11-06",
       "price": 55
@@ -78,7 +78,7 @@
       "id": 9025895,
       "photographerId": 82,
       "title": "Fashion Pattern on a Pattern",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Tracy/images/Fashion_Pattern_on_Pattern.webp",
+      "image": "./assets/images/webp/Tracy/images/Fashion_Pattern_on_Pattern.webp",
       "likes": 72,
       "date": "2013-08-12",
       "price": 55
@@ -87,7 +87,7 @@
       "id": 9275938,
       "photographerId": 82,
       "title": "Wedding Gazebo",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Tracy/images/Event_WeddingGazebo.webp",
+      "image": "./assets/images/webp/Tracy/images/Event_WeddingGazebo.webp",
       "likes": 69,
       "date": "2018-02-22",
       "price": 55
@@ -96,7 +96,7 @@
       "id": 2053494,
       "photographerId": 82,
       "title": "Sparkles",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Tracy/images/Event_Sparklers.webp",
+      "image": "./assets/images/webp/Tracy/images/Event_Sparklers.webp",
       "likes": 2,
       "date": "2020-05-25",
       "price": 55
@@ -105,7 +105,7 @@
       "id": 7324238,
       "photographerId": 82,
       "title": "18th Anniversary",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Tracy/images/Event_18thAnniversary.webp",
+      "image": "./assets/images/webp/Tracy/images/Event_18thAnniversary.webp",
       "likes": 33,
       "date": "2019-06-12",
       "price": 55
@@ -114,7 +114,7 @@
       "id": 8328953,
       "photographerId": 82,
       "title": "Wooden sculpture of a horse",
-      "video": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Tracy/videos/Art_Wooden_Horse_Sculpture.mp4",
+      "video": "./assets/images/webp/Tracy/videos/Art_Wooden_Horse_Sculpture.mp4",
       "likes": 24,
       "date": "2011-12-08",
       "price": 100
@@ -123,7 +123,7 @@
       "id": 7502053,
       "photographerId": 82,
       "title": "Triangle Man",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Tracy/images/Art_Triangle_Man.webp",
+      "image": "./assets/images/webp/Tracy/images/Art_Triangle_Man.webp",
       "likes": 88,
       "date": "2007-05-07",
       "price": 55
@@ -132,7 +132,7 @@
       "id": 8523492,
       "photographerId": 82,
       "title": "Purple Tunnel",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Tracy/images/Art_Purple_light.webp",
+      "image": "./assets/images/webp/Tracy/images/Art_Purple_light.webp",
       "likes": 24,
       "date": "2018-05-05",
       "price": 55
@@ -141,7 +141,7 @@
       "id": 75902334,
       "photographerId": 82,
       "title": "Art Mine",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Tracy/images/Art_Mine.webp",
+      "image": "./assets/images/webp/Tracy/images/Art_Mine.webp",
       "likes": 75,
       "date": "2019-11-25",
       "price": 55
@@ -150,7 +150,7 @@
       "id": 73852953,
       "photographerId": 925,
       "title": "8 Rows",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Rhode/images/Sport_2000_with_8.webp",
+      "image": "./assets/images/webp/Rhode/images/Sport_2000_with_8.webp",
       "likes": 52,
       "date": "2013-02-30",
       "price": 70
@@ -159,7 +159,7 @@
       "id": 92758372,
       "photographerId": 925,
       "title": "Fashion Wings",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Rhode/images/Fashion_Wings.webp",
+      "image": "./assets/images/webp/Rhode/images/Fashion_Wings.webp",
       "likes": 58,
       "date": "2018-07-17",
       "price": 70
@@ -168,7 +168,7 @@
       "id": 32958383,
       "photographerId": 925,
       "title": "Melody Red on Stripes",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Rhode/images/Fashion_Melody_Red_on_Stripes.webp",
+      "image": "./assets/images/webp/Rhode/images/Fashion_Melody_Red_on_Stripes.webp",
       "likes": 11,
       "date": "2019-08-12",
       "price": 70
@@ -177,7 +177,7 @@
       "id": 928587383,
       "photographerId": 925,
       "title": "Venture Conference",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Rhode/images/Event_VentureConference.webp",
+      "image": "./assets/images/webp/Rhode/images/Event_VentureConference.webp",
       "likes": 2,
       "date": "2019-01-02",
       "price": 70
@@ -186,7 +186,7 @@
       "id": 725639493,
       "photographerId": 925,
       "title": "Product Pitch",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Rhode/images/Event_ProductPitch.webp",
+      "image": "./assets/images/webp/Rhode/images/Event_ProductPitch.webp",
       "likes": 3,
       "date": "2019-05-20",
       "price": 70
@@ -195,7 +195,7 @@
       "id": 23394384,
       "photographerId": 925,
       "title": "Musical Festival Keyboard",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Rhode/images/Event_KeyboardCheck.webp",
+      "image": "./assets/images/webp/Rhode/images/Event_KeyboardCheck.webp",
       "likes": 52,
       "date": "2019-07-18",
       "price": 70
@@ -204,7 +204,7 @@
       "id": 87367293,
       "photographerId": 925,
       "title": "Musical Festival Singer",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Rhode/images/Event_Emcee.webp",
+      "image": "./assets/images/webp/Rhode/images/Event_Emcee.webp",
       "likes": 23,
       "date": "2018-02-22",
       "price": 70
@@ -213,7 +213,7 @@
       "id": 593834784,
       "photographerId": 925,
       "title": "Animal Majesty",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Rhode/images/Animals_Majesty.webp",
+      "image": "./assets/images/webp/Rhode/images/Animals_Majesty.webp",
       "likes": 52,
       "date": "2017-03-13",
       "price": 70
@@ -222,7 +222,7 @@
       "id": 83958935,
       "photographerId": 925,
       "title": "Cute puppy on sunset",
-      "video": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Rhode/videos/Animals_Puppiness.mp4",
+      "video": "./assets/images/webp/Rhode/videos/Animals_Puppiness.mp4",
       "likes": 52,
       "date": "2016-06-12",
       "price": 70
@@ -231,7 +231,7 @@
       "id": 394583434,
       "photographerId": 527,
       "title": "Rocky mountains from the air",
-      "video": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Nabeel/videos/Travel_Rock_Mountains.mp4",
+      "video": "./assets/images/webp/Nabeel/videos/Travel_Rock_Mountains.mp4",
       "likes": 23,
       "date": "2017-03-18",
       "price": 45
@@ -240,7 +240,7 @@
       "id": 343423425,
       "photographerId": 527,
       "title": "Outdoor Baths",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Nabeel/images/Travel_Outdoor_Baths.webp",
+      "image": "./assets/images/webp/Nabeel/images/Travel_Outdoor_Baths.webp",
       "likes": 101,
       "date": "2017-04-03",
       "price": 45
@@ -249,7 +249,7 @@
       "id": 73434243,
       "photographerId": 527,
       "title": "Road into the Hill",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Nabeel/images/Travel_Road_into_Hill.webp",
+      "image": "./assets/images/webp/Nabeel/images/Travel_Road_into_Hill.webp",
       "likes": 99,
       "date": "2018-04-30",
       "price": 45
@@ -258,7 +258,7 @@
       "id": 23425523,
       "photographerId": 527,
       "title": "Bridge into the Forest",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Nabeel/images/Travel_Bridge_into_Forest.webp",
+      "image": "./assets/images/webp/Nabeel/images/Travel_Bridge_into_Forest.webp",
       "likes": 34,
       "date": "2016-04-05",
       "price": 45
@@ -267,7 +267,7 @@
       "id": 23134513,
       "photographerId": 527,
       "title": "Boat Wonderer",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Nabeel/images/Travel_Boat_Wanderer.webp",
+      "image": "./assets/images/webp/Nabeel/images/Travel_Boat_Wanderer.webp",
       "likes": 23,
       "date": "2017-03-18",
       "price": 45
@@ -276,7 +276,7 @@
       "id": 92352352,
       "photographerId": 527,
       "title": "Portrait Sunkiss",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Nabeel/images/Portrait_Sunkissed.webp",
+      "image": "./assets/images/webp/Nabeel/images/Portrait_Sunkissed.webp",
       "likes": 66,
       "date": "2018-05-24",
       "price": 45
@@ -285,7 +285,7 @@
       "id": 34513453,
       "photographerId": 527,
       "title": "Shaw Portrait",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Nabeel/images/Portrait_Shaw.webp",
+      "image": "./assets/images/webp/Nabeel/images/Portrait_Shaw.webp",
       "likes": 52,
       "date": "2017-04-21",
       "price": 45
@@ -294,7 +294,7 @@
       "id": 23523533,
       "photographerId": 527,
       "title": "Alexandra",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Nabeel/images/Portrait_Alexandra.webp",
+      "image": "./assets/images/webp/Nabeel/images/Portrait_Alexandra.webp",
       "likes": 95,
       "date": "2018-11-02",
       "price": 45
@@ -303,7 +303,7 @@
       "id": 525834234,
       "photographerId": 527,
       "title": "Afternoon Break",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Nabeel/images/Portrait_AfternoonBreak.webp",
+      "image": "./assets/images/webp/Nabeel/images/Portrait_AfternoonBreak.webp",
       "likes": 25,
       "date": "2019-01-02",
       "price": 45
@@ -312,7 +312,7 @@
       "id": 623534343,
       "photographerId": 243,
       "title": "Lonesome",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Mimi/images/Travel_Lonesome.webp",
+      "image": "./assets/images/webp/Mimi/images/Travel_Lonesome.webp",
       "likes": 88,
       "date": "2019-02-03",
       "price": 45
@@ -321,7 +321,7 @@
       "id": 625025343,
       "photographerId": 243,
       "title": "Hillside Color",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Mimi/images/Travel_HillsideColor.webp",
+      "image": "./assets/images/webp/Mimi/images/Travel_HillsideColor.webp",
       "likes": 85,
       "date": "2019-04-03",
       "price": 45
@@ -330,7 +330,7 @@
       "id": 2525345343,
       "photographerId": 243,
       "title": "Wednesday Portrait",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Mimi/images/Portrait_Wednesday.webp",
+      "image": "./assets/images/webp/Mimi/images/Portrait_Wednesday.webp",
       "likes": 34,
       "date": "2019-04-07",
       "price": 45
@@ -339,7 +339,7 @@
       "id": 2523434634,
       "photographerId": 243,
       "title": "Nora Portrait",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Mimi/images/Portrait_Nora.webp",
+      "image": "./assets/images/webp/Mimi/images/Portrait_Nora.webp",
       "likes": 63,
       "date": "2019-04-07",
       "price": 45
@@ -348,7 +348,7 @@
       "id": 398847109,
       "photographerId": 243,
       "title": "Raw Black Portrait",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Mimi/images/Portrait_Background.webp",
+      "image": "./assets/images/webp/Mimi/images/Portrait_Background.webp",
       "likes": 55,
       "date": "2019-06-20",
       "price": 45
@@ -357,7 +357,7 @@
       "id": 2534342,
       "photographerId": 243,
       "title": "Seaside Wedding",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Mimi/images/Event_SeasideWedding.webp",
+      "image": "./assets/images/webp/Mimi/images/Event_SeasideWedding.webp",
       "likes": 25,
       "date": "2019-06-21",
       "price": 45
@@ -366,7 +366,7 @@
       "id": 65235234,
       "photographerId": 243,
       "title": "Boulder Wedding",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Mimi/images/Event_PintoWedding.webp",
+      "image": "./assets/images/webp/Mimi/images/Event_PintoWedding.webp",
       "likes": 52,
       "date": "2019-06-25",
       "price": 45
@@ -375,7 +375,7 @@
       "id": 23523434,
       "photographerId": 243,
       "title": "Benevides Wedding",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Mimi/images/Event_BenevidesWedding.webp",
+      "image": "./assets/images/webp/Mimi/images/Event_BenevidesWedding.webp",
       "likes": 77,
       "date": "2019-06-28",
       "price": 45
@@ -384,7 +384,7 @@
       "id": 5234343,
       "photographerId": 243,
       "title": "Wild horses in the mountains",
-      "video": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Mimi/videos/Animals_Wild_Horses_in_the_mountains.mp4",
+      "video": "./assets/images/webp/Mimi/videos/Animals_Wild_Horses_in_the_mountains.mp4",
       "likes": 142,
       "date": "2019-08-23",
       "price": 60
@@ -393,7 +393,7 @@
       "id": 95234343,
       "photographerId": 243,
       "title": "Rainbow Bird",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Mimi/images/Animals_Rainbow.webp",
+      "image": "./assets/images/webp/Mimi/images/Animals_Rainbow.webp",
       "likes": 59,
       "date": "2019-07-02",
       "price": 60
@@ -402,7 +402,7 @@
       "id": 52343416,
       "photographerId": 195,
       "title": "Japanese Tower, Kyoto",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Marcel/images/Travel_Tower.webp",
+      "image": "./assets/images/webp/Marcel/images/Travel_Tower.webp",
       "likes": 25,
       "date": "2019-04-03",
       "price": 60
@@ -411,7 +411,7 @@
       "id": 2523434,
       "photographerId": 195,
       "title": "Senset on Canals, Venice",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Marcel/images/Travel_SunsetonCanals.webp",
+      "image": "./assets/images/webp/Marcel/images/Travel_sunsetonCanals.webp",
       "likes": 53,
       "date": "2019-05-06",
       "price": 60
@@ -420,7 +420,7 @@
       "id": 95293534,
       "photographerId": 195,
       "title": "Mountain and Lake",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Marcel/images/Travel_OpenMountain.webp",
+      "image": "./assets/images/webp/Marcel/images/Travel_OpenMountain.webp",
       "likes": 33,
       "date": "2019-05-12",
       "price": 60
@@ -429,7 +429,7 @@
       "id": 356234343,
       "photographerId": 195,
       "title": "City Bike and Stair, Paris",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Marcel/images/Travel_Bike_and_Stair.webp",
+      "image": "./assets/images/webp/Marcel/images/Travel_Bike_and_Stair.webp",
       "likes": 53,
       "date": "2019-06-20",
       "price": 60
@@ -438,7 +438,7 @@
       "id": 235234343,
       "photographerId": 195,
       "title": "Adventure Door, India",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Marcel/images/Travel_Adventure_Door.webp",
+      "image": "./assets/images/webp/Marcel/images/Travel_Adventure_Door.webp",
       "likes": 63,
       "date": "2019-06-26",
       "price": 60
@@ -447,7 +447,7 @@
       "id": 6234234343,
       "photographerId": 195,
       "title": "Contrast, St Petersburg",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Marcel/images/Architecure_Contrast.webp",
+      "image": "./assets/images/webp/Marcel/images/Architecture_Contrast.webp",
       "likes": 52,
       "date": "2019-06-30",
       "price": 60
@@ -456,7 +456,7 @@
       "id": 6525666253,
       "photographerId": 195,
       "title": "On a Hill, Tibet",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Marcel/images/Architecture_On_a_hill.webp",
+      "image": "./assets/images/webp/Marcel/images/Architecture_On_a_Hill.webp",
       "likes": 63,
       "date": "2019-07-20",
       "price": 60
@@ -465,7 +465,7 @@
       "id": 98252523433,
       "photographerId": 195,
       "title": "Leaning Tower, Pisa",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Marcel/images/Architecture_Dome.webp",
+      "image": "./assets/images/webp/Marcel/images/Architecture_Dome.webp",
       "likes": 88,
       "date": "2020-01-05",
       "price": 60
@@ -474,7 +474,7 @@
       "id": 9259398453,
       "photographerId": 195,
       "title": "Drone shot of Buenos Aires highways",
-      "video": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Marcel/videos/Architecture_coverr_circle_empty_highway_in_buenos_aires_587740985637.mp4",
+      "video": "./assets/images/webp/Marcel/videos/Architecture_coverr_circle_empty_highway_in_buenos_aires_587740985637.mp4",
       "likes": 57,
       "date": "2020-01-20",
       "price": 65
@@ -483,7 +483,7 @@
       "id": 3523523534,
       "photographerId": 195,
       "title": "Corner Building and Blue Sky",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Marcel/images/Architecture_Corner_Room.webp",
+      "image": "./assets/images/webp/Marcel/images/Architecture_Corner_Room.webp",
       "likes": 54,
       "date": "2020-05-05",
       "price": 60
@@ -492,7 +492,7 @@
       "id": 952343423,
       "photographerId": 930,
       "title": "Tricks in the air",
-      "video": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Ellie+Rose/videos/Sport_Tricks_in_the_air.mp4",
+      "video": "./assets/images/webp/Ellie Rose/videos/Sport_Tricks_in_the_air.mp4",
       "likes": 150,
       "date": "2018-02-30",
       "price": 70
@@ -501,7 +501,7 @@
       "id": 235234343,
       "photographerId": 930,
       "title": "Climber",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Ellie+Rose/images/Sport_Next_Hold.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Sport_Next_Hold.webp",
       "likes": 101,
       "date": "2018-03-05",
       "price": 65
@@ -510,7 +510,7 @@
       "id": 235343222,
       "photographerId": 930,
       "title": "Surfer",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Ellie+Rose/images/sport_water_tunnel.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Sport_Water_tunnel.webp",
       "likes": 103,
       "date": "2018-03-10",
       "price": 70
@@ -519,7 +519,7 @@
       "id": 7775342343,
       "photographerId": 930,
       "title": "Skier",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Ellie+Rose/images/Sport_Sky_Cross.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Sport_Sky_Cross.webp",
       "likes": 77,
       "date": "2018-04-16",
       "price": 50
@@ -528,7 +528,7 @@
       "id": 9253445784,
       "photographerId": 930,
       "title": "Race End",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Ellie+Rose/images/Sport_Race_End.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Sport_Race_End.webp",
       "likes": 88,
       "date": "2018-04-22",
       "price": 65
@@ -537,7 +537,7 @@
       "id": 22299394,
       "photographerId": 930,
       "title": "Jump!",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Ellie+Rose/images/Sport_Jump.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Sport_Jump.webp",
       "likes": 95,
       "date": "2018-04-27",
       "price": 70
@@ -546,7 +546,7 @@
       "id": 3452342633,
       "photographerId": 930,
       "title": "White Light",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Ellie+Rose/images/Architecture_White_Light.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Architecture_White_Light.webp",
       "likes": 52,
       "date": "2018-05-03",
       "price": 75
@@ -555,7 +555,7 @@
       "id": 939234243,
       "photographerId": 930,
       "title": "Water on Modern Building",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Ellie+Rose/images/Architecture_Water_on_Modern.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Architecture_Water_on_Modern.webp",
       "likes": 55,
       "date": "2018-05-10",
       "price": 72
@@ -564,7 +564,7 @@
       "id": 222959233,
       "photographerId": 930,
       "title": "Horseshoe",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Ellie+Rose/images/Architecture_Horseshoe.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Architecture_Horseshoe.webp",
       "likes": 85,
       "date": "2018-05-15",
       "price": 71
@@ -573,7 +573,7 @@
       "id": 965933434,
       "photographerId": 930,
       "title": "Cross Bar",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Ellie+Rose/images/Architecture_Cross_Bar.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Architecture_Cross_Bar.webp",
       "likes": 66,
       "date": "2018-05-20",
       "price": 58
@@ -582,7 +582,7 @@
       "id": 777723343,
       "photographerId": 930,
       "title": "Connected Curves",
-      "image": "https://hotp0t-public-bucket1.s3.eu-west-3.amazonaws.com/Assets/OCR/OCR-P6/assets/images/Photographers/webp/Ellie+Rose/images/Architecture_Connected_Curves.webp",
+      "image": "./assets/images/webp/Ellie Rose/images/Architecture_Connected_Curves.webp",
       "likes": 79,
       "date": "2018-05-21",
       "price": 80
