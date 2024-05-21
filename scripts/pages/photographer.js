@@ -22,8 +22,6 @@ async function getPhotographerDetails(photographerId) {
     const data = await response.json();
     const photographer = data.record.photographers.find(p => p.id === parseInt(photographerId, 10));
     const media = data.record.media.filter(m => m.photographerId === parseInt(photographerId, 10));
-    // console.log('Fetched photographer details:', photographer);
-    // console.log('Fetched media:', media);
     return { photographer, media };
   } catch (error) {
     console.error('Failed to fetch photographer details:', error);
@@ -68,18 +66,21 @@ function displayPhotographerMedia(media, sortType = null) {
   sortedMedia.forEach(item => {
     const mediaElement = document.createElement('div');
     mediaElement.className = 'media-item';
+    mediaElement.tabIndex = 0;
 
     if (item.image) {
       const img = document.createElement('img');
       img.src = item.image;
       img.className = 'photographer-image';
       img.alt = `Picture named ${item.title}`;
+      img.tabIndex = 0;
       mediaElement.appendChild(img);
     } else if (item.video) {
       const video = document.createElement('video');
       video.controls = true;
       video.className = 'photographer-video';
       video.alt = `Video named ${item.title}`;
+      video.tabIndex = 0;
       const source = document.createElement('source');
       source.src = item.video;
       video.appendChild(source);
@@ -88,21 +89,28 @@ function displayPhotographerMedia(media, sortType = null) {
 
     const mediaDetails = document.createElement('div');
     mediaDetails.classList.add('media-details');
+    mediaDetails.tabIndex = 0;
 
     const title = document.createElement('h3');
     title.textContent = item.title;
+    title.tabIndex = 0;
     mediaDetails.appendChild(title);
 
     const likeDiv = document.createElement('div');
     likeDiv.classList.add('like-div');
+    likeDiv.tabIndex = 0;
 
     const likes = document.createElement('span');
     likes.textContent = `${item.likes}`;
     likes.className = 'likes';
+    likes.tabIndex = 0;
 
     const likeButton = document.createElement('i');
     likeButton.className = 'like-button';
     likeButton.innerHTML = '&#x2764;';
+    likeButton.role = 'button';
+    likeButton.tabIndex = 0;
+    likeButton.setAttribute('aria-label', 'Like');
 
     const updateLikes = (increment) => {
       item.likes += increment;
@@ -151,7 +159,6 @@ async function displayPhotographerBottomInfo(photographerId) {
   if (photographer && media) {
     const totalLikes = calculateTotalLikes(media);
     displayBottomInfo(photographer.price, totalLikes);
-    // console.log('Displayed bottom info with total likes and price:', photographer.price, totalLikes);
   } else {
     console.error('Failed to load photographer details or media.');
   }
@@ -184,13 +191,16 @@ function calculateTotalLikes(media) {
 function displayBottomInfo(price, totalLikes) {
   const bottomInfoDiv = document.createElement('div');
   bottomInfoDiv.classList.add('bottom-info');
+  bottomInfoDiv.tabIndex = 0;
 
   const totalLikesElement = document.createElement('span');
   totalLikesElement.id = 'total-likes';
   totalLikesElement.textContent = `${totalLikes} ♥︎`;
+  totalLikesElement.tabIndex = 0;
 
   const priceElement = document.createElement('span');
   priceElement.textContent = `${price} €/jour`;
+  priceElement.tabIndex = 0;
 
   bottomInfoDiv.appendChild(totalLikesElement);
   bottomInfoDiv.appendChild(priceElement);
@@ -222,7 +232,6 @@ async function updateBottomInfo() {
 function updateFormHeader(name) {
   const formHeader = document.querySelector('#contact_modal h2');
   formHeader.textContent = `Contactez-moi ${name}`;
-  // console.log('Updated form header with photographer name:', name);
 }
 
 /**
@@ -245,8 +254,6 @@ async function init() {
 
     // Update the form header with the photographer's name
     updateFormHeader(photographer.name);
-
-    // console.log('Initialized page with photographer details and media:', photographer, media);
   } else {
     console.error('Failed to load photographer details or media.');
   }
