@@ -185,6 +185,9 @@ h3 {
 
 .like-div {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
 /** MODAL STYLES **/
