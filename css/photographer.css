@@ -424,7 +424,6 @@ body.dimmed > :not(.modal_container) {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  
 }
 
 .lightbox-content {
@@ -449,7 +448,6 @@ body.dimmed > :not(.modal_container) {
 
 .lightbox-content img,
 .lightbox-content video {
-  
   max-height: 80vh;
   object-fit: contain;
 }

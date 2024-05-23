@@ -3,7 +3,7 @@
  * @param {string} mediaSrc - The source URL of the media to display initially in the lightbox.
  * @param {string} mediaName - The name of the media to display.
  */
-function openLightbox(mediaSrc) {
+function openLightbox (mediaSrc) {
   // Clear existing lightbox if present
   const existingOverlay = document.querySelector('.lightbox-overlay');
   if (existingOverlay) {

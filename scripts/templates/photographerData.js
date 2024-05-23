@@ -8,7 +8,7 @@
  * @param {string} photographerId - The unique identifier for the photographer.
  * @returns {Promise<Object>} An object containing details of the photographer and their media, or an error if the fetch fails.
  */
-async function getPhotographerDetails(photographerId) {
+async function getPhotographerDetails (photographerId) {
   try {
     const response = await fetch('https://api.jsonbin.io/v3/b/660d15e2ad19ca34f854284c', {
       headers: {
@@ -36,20 +36,20 @@ async function getPhotographerDetails(photographerId) {
  * @param {string} photographer.tagline - The photographer's tagline.
  * @param {string} photographer.portrait - The URL to the photographer's portrait image.
  */
-function displayPhotographerDetails(photographer) {
+function displayPhotographerDetails (photographer) {
   // Ensuring the photographer details container is accessible
   const photographerName = document.getElementById('photographer-name');
   photographerName.textContent = photographer.name;
   photographerName.tabIndex = 0; // Adding tabindex for focusability
-  
+
   const photographerLocation = document.getElementById('photographer-location');
   photographerLocation.textContent = `${photographer.city}, ${photographer.country}`;
   photographerLocation.tabIndex = 0; // Adding tabindex for focusability
-  
+
   const photographerTagline = document.getElementById('photographer-tagline');
   photographerTagline.textContent = photographer.tagline;
   photographerTagline.tabIndex = 0; // Adding tabindex for focusability
-  
+
   const photographerImageContainer = document.getElementById('photographer-image');
   photographerImageContainer.innerHTML = ''; // Clear existing content
   const img = document.createElement('img');

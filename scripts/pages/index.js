@@ -18,7 +18,7 @@ async function displayData (photographers) {
 
   photographers.forEach((photographer) => {
     const userCardDOM = photographerTemplate(photographer);
-    
+
     const navigateToDetailPage = () => {
       window.location.href = `photographer.html?id=${photographer.id}`;
     };
